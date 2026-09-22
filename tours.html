@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interworld Travel</title>
+
+  <link rel="icon" type="image/png" href="./assets/favicon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon//favicon.svg">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon//apple-touch-icon.png">
+  <link rel="manifest" href="./assets/favicon//site.webmanifest">
+
+  <link rel="stylesheet" href="./assets/css/tours.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header header--transparent">
+      <div class="container">
+        <div class="header__content">
+          <a href="index.html" class="header__logo logo">
+            <span class="logo__img">
+              <img src="./assets/img/logo.png" width="50" height="50" alt="Логотип Interworld Travel.">
+            </span>
+            <span class="logo__text">
+              <img src="./assets/img/logo-text.svg" width="86" height="55" alt="Interworld Travel.">
+            </span>
+          </a>
+          <button class="header__theme-switcher" aria-label="Переключить тему">
+            <img class="light" src="./assets/img/lamp-light.png" width="100" height="133" alt="" aria-hidden="true">
+            <img class="dark" src="./assets/img/lamp-dark.png" width="100" height="133" alt="" aria-hidden="true"
+              style="display: none;">
+            <img class="hanger light" src="./assets/img/hanger-light.png" alt="" aria-hidden="true">
+            <img class="hanger dark" src="./assets/img/hanger-dark.png" alt="" aria-hidden="true"
+              style="display: none;">
+            <span class="header__theme-switcher-bg"></span>
+          </button>
+          <button class="header__menu-toggle js-dropdown-trigger" data-id="#nav" aria-label="Открыть меню">
+            <span></span>
+          </button>
+          <nav class="header__nav nav" id="nav">
+            <ul class="nav__list list-reset preload">
+              <li class="nav__item">
+                <a class="nav__link nav__link--anchor" href="index.html#about">О нас</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link nav__link--anchor" href="index.html#popular">Популярное</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link nav__link--anchor" href="index.html#reviews">Отзывы</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link nav__link--anchor" href="index.html#faq">FAQ</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link nav__link--anchor" href="#contacts">Контакты</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link btn btn--primary" href="#">
+                  <span>Забронировать</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="tours">
+        <div class="container">
+          <h1 class="tours__title title">Каталог туров</h1>
+          <div class="tours__tabs">
+            <button class="tours__tabs-btn is-active" data-tab="martin">Лед и Пламя</button>
+            <button class="tours__tabs-btn" data-tab="rowling">Гарри Поттер</button>
+            <button class="tours__tabs-btn" data-tab="tolkien">Средиземье</button>
+            <button class="tours__tabs-btn" data-tab="starwars">Звёздные войны</button>
+            <button class="tours__tabs-btn" data-tab="witcher">Ведьмак</button>
+            <button class="tours__tabs-btn" data-tab="exo">Ехо</button>
+            <button class="tours__tabs-btn" data-tab="lovecraft">Лавкрафт</button>
+            <button class="tours__tabs-btn" data-tab="dune">Дюна</button>
+            <button class="tours__tabs-btn" data-tab="pratchett">Плоский мир</button>
+          </div>
+          <div class="tours__content">
+            <ul class="tours__list list-reset is-active" data-id="martin">
+              <li class="tours__item">
+                <div class="tours__image">
+                  <img src="./assets/img/tours/tour-martin-1.webp" alt="Вольные города." width="400" height="280">
+                  <span class="tours__category">Волонтёрство</span>
+                  <h2 class="tours__tour-title">Волонтёрская миссия в «домах подушек»</h2>
+                </div>
+                <div class="tours__info">
+                  <span class="tours__location">Вольные города, Эссос</span>
+                  <p class="tours__description">Гуманитарная поездка для взрослых волонтёров: помощь в проведении
+                    лекций о здоровье, психологических тренингов, а также вручение подарочных наборов подопечным миссии.
+                    Проживание в уютных городских гостиницах.</p>
+                  <p class="tours__note">Строго 18+</p>
+                  <div class="tours__parameters">
+                    <div class="tours__parameter tours__parameter--rating">
+                      <span class="tours__parameter-label">Рейтинг:</span>
+                      <span class="tours__parameter-value">4,6</span>
+                    </div>
+                    <div class="tours__parameter tours__parameter--danger">
+                      <span class="tours__parameter-label">Опасность:</span>
+                      <span class="tours__parameter-value" data-value="1"></span>
+                    </div>
+                    <div class="tours__parameter tours__parameter--price">
+                      <span class="tours__parameter-label">Цена:</span>
+                      <span class="tours__parameter-value" data-value="2"></span>
+                    </div>
+                  </div>
+                  <button class="tours__btn btn btn--primary">
+                    <span>Хочу сюда!</span>
+                  </button>
+                </div>
+              </li>
+              <li class="tours__item">
+                <div class="tours__image">
+                  <img src="./assets/img/tours/tour-martin-2.webp" alt="Восхождение на Кулак первых людей." width="400"
+                    height="280">
+                  <span class="tours__category">Экстрим</span>
+                  <h2 class="tours__tour-title">Восхождение на Кулак первых людей</h2>
+                </div>
+                <div class="tours__info">
+                  <span class="tours__location">Земли за стеной, Вестерос</span>
+                  <p class="tours__description">Суровый поход за Стену к древней горной крепости: ледяные
+                    тропы, северные легенды и захватывающие виды на земли одичалых. В расширенный пакет входят гонки на
+                    лютовольчьих упряжках</p>
+                  <p class="tours__note">Походное снаряжение и теплую одежду участники покупают самостоятельно</p>
+                  <div class="tours__parameters">
+                    <div class="tours__parameter tours__parameter--rating">
+                      <span class="tours__parameter-label">Рейтинг:</span>
+                      <span class="tours__parameter-value">4,8</span>
+                    </div>
+                    <div class="tours__parameter tours__parameter--danger">
+                      <span class="tours__parameter-label">Опасность:</span>
+                      <span class="tours__parameter-value" data-value="5"></span>
+                    </div>
+                    <div class="tours__parameter tours__parameter--price">
+                      <span class="tours__parameter-label">Цена:</span>
+                      <span class="tours__parameter-value" data-value="3"></span>
+                    </div>
+                  </div>
+                  <button class="tours__btn btn btn--primary">
+                    <span>Хочу сюда!</span>
+                  </button>
+                </div>
+              </li>
+
+              <li class="tours__item">
+                <div class="tours__image">
+                  <img src="./assets/img/tours/tour-martin-3.webp" alt="Турнир в Эшфорде." width="400" height="280">
+                  <span class="tours__category">События</span>
+                  <h2 class="tours__tour-title">Турнир в Эшфорде</h2>
+                </div>
+                <div class="tours__info">
+                  <span class="tours__location">Эшфорд, Вестерос</span>
+                  <p class="tours__description">Посещение легендарного рыцарского турнира: зрелищные
+                    поединки на копьях, атмосфера рыцарства, пиры под открытым небом, ярмарка ремесленников и шанс
+                    увидеть лучших рыцарей и лордов Семи Королевств.</p>
+                  <p class="tours__note">Для желающих будет организован мастер-класс по владению копьем</p>
+                  <div class="tours__parameters">
+                    <div class="tours__parameter tours__parameter--rating">
+                      <span class="tours__parameter-label">Рейтинг:</span>
+                      <span class="tours__parameter-value">4,7</span>
+                    </div>
+                    <div class="tours__parameter tours__parameter--danger">
+                      <span class="tours__parameter-label">Опасность:</span>
+                      <span class="tours__parameter-value" data-value="2"></span>
+                    </div>
+                    <div class="tours__parameter tours__parameter--price">
+                      <span class="tours__parameter-label">Цена:</span>
+                      <span class="tours__parameter-value" data-value="4"></span>
+                    </div>
+                  </div>
+                  <button class="tours__btn btn btn--primary">
+                    <span>Хочу сюда!</span>
+                  </button>
+                </div>
+              </li>
+
+              <li class="tours__item">
+                <div class="tours__image">
+                  <img src="./assets/img/tours/tour-martin-4.webp" alt="По волнам дотракийского моря." width="400"
+                    height="280">
+                  <span class="tours__category">Экотуризм</span>
+                  <h2 class="tours__tour-title">По волнам дотракийского моря</h2>
+                </div>
+                <div class="tours__info">
+                  <span class="tours__location">Дотракийское море, Эссос</span>
+                  <p class="tours__description">Путешествие по бескрайним степям Дотраки: кочевые стоянки,
+                    конные прогулки, закаты над травяным морем и знакомство с
+                    древними традициями всадников. Возможность попробовать
+                    уникальные шедевры кочевой гастрономии и напитки из
+                    кобыльего молока.</p>
+                  <p class="tours__note">При посещении Ваэс Дотрака провозить спички и зажигалки строго запрещено</p>
+                  <div class="tours__parameters">
+                    <div class="tours__parameter tours__parameter--rating">
+                      <span class="tours__parameter-label">Рейтинг:</span>
+                      <span class="tours__parameter-value">4,8</span>
+                    </div>
+                    <div class="tours__parameter tours__parameter--danger">
+                      <span class="tours__parameter-label">Опасность:</span>
+                      <span class="tours__parameter-value" data-value="2"></span>
+                    </div>
+                    <div class="tours__parameter tours__parameter--price">
+                      <span class="tours__parameter-label">Цена:</span>
+                      <span class="tours__parameter-value" data-value="3"></span>
+                    </div>
+                  </div>
+                  <button class="tours__btn btn btn--primary">
+                    <span>Хочу сюда!</span>
+                  </button>
+                </div>
+              </li>
+
+              <li class="tours__item">
+                <div class="tours__image">
+                  <img src="./assets/img/tours/tour-martin-5.webp" alt="Круиз к руинам Валирии." width="400"
+                    height="280">
+                  <span class="tours__category">Экстрим</span>
+                  <h2 class="tours__tour-title">Круиз к руинам Валирии</h2>
+                </div>
+                <div class="tours__info">
+                  <span class="tours__location">Валирия, Эссос</span>
+                  <p class="tours__description">Экспедиционный круиз к руинам древней Валирии: туманные
+                    проливы, вулканические острова, рассказы о драконьих лордах и
+                    ужин с блюдами валирийской кухни. В программе — фотостоп у
+                    Чёрных стен, лекции о гибели империи и конкурс «Кто первым
+                    заметит подозрительный дым».</p>
+                  <p class="tours__note">Требуется справка от паразитолога и расширенная туристическая страховка.
+                    Выдаётся костюм химзащиты.</p>
+                  <div class="tours__parameters">
+                    <div class="tours__parameter tours__parameter--rating">
+                      <span class="tours__parameter-label">Рейтинг:</span>
+                      <span class="tours__parameter-value">3,8</span>
+                    </div>
+                    <div class="tours__parameter tours__parameter--danger">
+                      <span class="tours__parameter-label">Опасность:</span>
+                      <span class="tours__parameter-value" data-value="5"></span>
+                    </div>
+                    <div class="tours__parameter tours__parameter--price">
+                      <span class="tours__parameter-label">Цена:</span>
+                      <span class="tours__parameter-value" data-value="5"></span>
+                    </div>
+                  </div>
+                  <button class="tours__btn btn btn--primary">
+                    <span>Хочу сюда!</span>
+                  </button>
+                </div>
+              </li>
+
+              <li class="tours__item">
+                <div class="tours__image">
+                  <img src="./assets/img/tours/tour-martin-6.webp" alt="Семь столиц Вестероса." width="400"
+                    height="280">
+                  <span class="tours__category">Экскурсии, можно с детьми</span>
+                  <h2 class="tours__tour-title">Семь столиц Вестероса</h2>
+                </div>
+                <div class="tours__info">
+                  <span class="tours__location">Винтерфелл, Орлиное Гнездо, Риверран, Утёс Кастерли, Хайгарден,
+                    Штормовой Предел, Солнечное Копьё, Пайк</span>
+                  <p class="tours__description">Самый масштабный и длительный тур по Семи королевствам: от промозглого
+                    Винтерфелла до знойного Дорна. Вас ждут интриги, пиры и незабываемые виды. Познакомьтесь с местными
+                    традициями и разнообразной региональной кухней.</p>
+                  <p class="tours__note">В программу входит посещение уникального музея свадебной культуры в замке
+                    Близнецы (Речные земли).</p>
+                  <div class="tours__parameters">
+                    <div class="tours__parameter tours__parameter--rating">
+                      <span class="tours__parameter-label">Рейтинг:</span>
+                      <span class="tours__parameter-value">4,7</span>
+                    </div>
+                    <div class="tours__parameter tours__parameter--danger">
+                      <span class="tours__parameter-label">Опасность:</span>
+                      <span class="tours__parameter-value" data-value="2"></span>
+                    </div>
+                    <div class="tours__parameter tours__parameter--price">
+                      <span class="tours__parameter-label">Цена:</span>
+                      <span class="tours__parameter-value" data-value="5"></span>
+                    </div>
+                  </div>
+                  <button class="tours__btn btn btn--primary">
+                    <span>Хочу сюда!</span>
+                  </button>
+                </div>
+              </li>
+
+              <li class="tours__item">
+                <div class="tours__image">
+                  <img src="./assets/img/tours/tour-martin-7.webp" alt="Мужской ретрит в Чёрном замке Ночного дозора."
+                    width="400" height="280">
+                  <span class="tours__category">Оздоровление</span>
+                  <h2 class="tours__tour-title">Мужской ретрит в Чёрном замке Ночного дозора</h2>
+                </div>
+                <div class="tours__info">
+                  <span class="tours__location">Чёрный замок, Ночной дозор</span>
+                  <p class="tours__description">Суровый отдых для истинных мужицких мужиков, для тех, кто
+                    устал от офиса, планерок и рабочих чатов, для тех, кто хочет настоящих испытаний: ледяной ветер,
+                    горячая каша, братство, баня со снежными обтираниями и никаких разговоров о чувствах.
+                  </p>
+                  <p class="tours__note">Брелок из драконьего стекла в подарок при раннем бронировании</p>
+                  <div class="tours__parameters">
+                    <div class="tours__parameter tours__parameter--rating">
+                      <span class="tours__parameter-label">Рейтинг:</span>
+                      <span class="tours__parameter-value">4,6</span>
+                    </div>
+                    <div class="tours__parameter tours__parameter--danger">
+                      <span class="tours__parameter-label">Опасность:</span>
+                      <span class="tours__parameter-value" data-value="3"></span>
+                    </div>
+                    <div class="tours__parameter tours__parameter--price">
+                      <span class="tours__parameter-label">Цена:</span>
+                      <span class="tours__parameter-value" data-value="5"></span>
+                    </div>
+                  </div>
+                  <button class="tours__btn btn btn--primary">
+                    <span>Хочу сюда!</span>
+                  </button>
+                </div>
+              </li>
+
+              <li class="tours__item">
+                <div class="tours__image">
+                  <img src="./assets/img/tours/tour-martin-8.webp" alt="Огненный фестиваль в Королевской гавани."
+                    width="400" height="280">
+                  <span class="tours__category">События</span>
+                  <h2 class="tours__tour-title">Огненный фестиваль в Королевской гавани</h2>
+                </div>
+                <div class="tours__info">
+                  <span class="tours__location">Королевская Гавань</span>
+                  <p class="tours__description">Роскошный вечер в столице Семи королевств: вас ждут
+                    зрелищное файер-шоу с участием драконов, огненные танцы и
+                    фейерверк над Красным замком.</p>
+                  <p class="tours__note">Мазь от ожогов спрашивайте у своего гида</p>
+                  <div class="tours__parameters">
+                    <div class="tours__parameter tours__parameter--rating">
+                      <span class="tours__parameter-label">Рейтинг:</span>
+                      <span class="tours__parameter-value">4,7</span>
+                    </div>
+                    <div class="tours__parameter tours__parameter--danger">
+                      <span class="tours__parameter-label">Опасность:</span>
+                      <span class="tours__parameter-value" data-value="3"></span>
+                    </div>
+                    <div class="tours__parameter tours__parameter--price">
+                      <span class="tours__parameter-label">Цена:</span>
+                      <span class="tours__parameter-value" data-value="3"></span>
+                    </div>
+                  </div>
+                  <button class="tours__btn btn btn--primary">
+                    <span>Хочу сюда!</span>
+                  </button>
+                </div>
+              </li>
+            </ul>
+
+            <!-- <ul class="tours__list" data-id="rowling"></ul>
+            <ul class="tours__list" data-id="tolkien"></ul>
+            <ul class="tours__list" data-id="starwars"></ul>
+            <ul class="tours__list" data-id="witcher"></ul>
+            <ul class="tours__list" data-id="exo"></ul>
+            <ul class="tours__list" data-id="lovecraft"></ul>
+            <ul class="tours__list" data-id="dune"></ul>
+            <ul class="tours__list" data-id="pratchett"></ul> -->
+            <button class="tours__more-btn btn tours__tabs-btn">
+              <span>Показать ещё</span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="contacts" id="contacts">
+        <div class="container">
+          <div class="contacts__wrapper">
+            <div class="contacts__info">
+              <h2 class="contacts__title title">Контакты</h2>
+              <ul class="contacts__list list-reset">
+                <li class="contacts__item">
+                  <a href="https://maps.app.goo.gl/6AZznmpNh7ytuM3fA" class="contacts__link" target="_blank"
+                    rel="nofollow noopener noreferrer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M11.54 22.351L11.61 22.391L11.638 22.407C11.749 22.467 11.8733 22.4985 11.9995 22.4985C12.1257 22.4985 12.25 22.467 12.361 22.407L12.389 22.392L12.46 22.351C12.5207 22.3157 12.6057 22.2647 12.715 22.198C12.932 22.065 13.239 21.868 13.605 21.609C14.5657 20.9303 15.4633 20.1666 16.287 19.327C18.231 17.337 20.25 14.347 20.25 10.5C20.25 8.31196 19.3808 6.21354 17.8336 4.66637C16.2865 3.11919 14.188 2.25 12 2.25C9.81196 2.25 7.71354 3.11919 6.16637 4.66637C4.61919 6.21354 3.75 8.31196 3.75 10.5C3.75 14.346 5.77 17.337 7.713 19.327C8.53672 20.1666 9.43434 20.9303 10.395 21.609C10.7666 21.8716 11.1486 22.1191 11.54 22.351ZM12 13.5C12.7956 13.5 13.5587 13.1839 14.1213 12.6213C14.6839 12.0587 15 11.2956 15 10.5C15 9.70435 14.6839 8.94129 14.1213 8.37868C13.5587 7.81607 12.7956 7.5 12 7.5C11.2044 7.5 10.4413 7.81607 9.87868 8.37868C9.31607 8.94129 9 9.70435 9 10.5C9 11.2956 9.31607 12.0587 9.87868 12.6213C10.4413 13.1839 11.2044 13.5 12 13.5Z"
+                        fill="currentColor" />
+                    </svg>
+                    <span>Санкт-Петербург</span>
+                  </a>
+                </li>
+                <li class="contacts__item">
+                  <a href="mailto:info@mezhdu-mirye.ru" class="contacts__link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M22 6.86L12 12.635L2 6.86V6.75C2.00132 6.02106 2.29148 5.32236 2.80692 4.80692C3.32236 4.29148 4.02106 4.00132 4.75 4H19.25C19.9789 4.00132 20.6776 4.29148 21.1931 4.80692C21.7085 5.32236 21.9987 6.02106 22 6.75V6.86ZM2 8.59L12 14.365V14.37L22 8.595V17.245C21.9987 17.9739 21.7085 18.6726 21.1931 19.1881C20.6776 19.7035 19.9789 19.9937 19.25 19.995H4.75C4.02106 19.9937 3.32236 19.7035 2.80692 19.1881C2.29148 18.6726 2.00132 17.9739 2 17.245V8.59Z"
+                        fill="currentColor" />
+                    </svg>
+                    <span>info@iwtravel.com</span>
+                  </a>
+                </li>
+                <li class="contacts__item">
+                  <a href="tel:+78121234567" class="contacts__link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M18 9.75H16.5C16.4994 9.15345 16.2622 8.5815 15.8403 8.15967C15.4185 7.73784 14.8466 7.5006 14.25 7.5V6C15.2442 6.00119 16.1973 6.39666 16.9003 7.09966C17.6033 7.80267 17.9988 8.7558 18 9.75Z"
+                        fill="currentColor" />
+                      <path
+                        d="M21 9.75001H19.5C19.498 8.35823 18.9443 7.02402 17.9601 6.03989C16.976 5.05575 15.6418 4.50199 14.25 4.50001V3.00001C16.0396 3.00199 17.7553 3.71379 19.0208 4.97923C20.2862 6.24467 20.998 7.9604 21 9.75001ZM15.2497 16.1115L16.9297 14.4315C17.1548 14.2068 17.4407 14.053 17.7522 13.989C18.0637 13.925 18.3871 13.9537 18.6825 14.0715L20.7285 14.8905C21.0299 15.0114 21.2882 15.2197 21.4702 15.4886C21.6523 15.7576 21.7497 16.0748 21.75 16.3995V20.1203C21.7505 20.3414 21.7059 20.5603 21.6189 20.7636C21.5319 20.9669 21.4043 21.1504 21.2439 21.3026C21.0836 21.4549 20.8938 21.5729 20.6863 21.6493C20.4788 21.7257 20.2578 21.7589 20.037 21.747C5.6955 20.8545 2.799 8.70751 2.26125 4.05601C2.2352 3.8286 2.2576 3.59826 2.32696 3.38013C2.39632 3.16201 2.51108 2.96104 2.66368 2.79044C2.81628 2.61984 3.00327 2.48349 3.21235 2.39034C3.42143 2.29719 3.64786 2.24937 3.87675 2.25001H7.5315C7.85623 2.2503 8.17345 2.34773 8.44236 2.52977C8.71128 2.7118 8.91958 2.97012 9.0405 3.27151L9.85875 5.31751C9.97654 5.61288 10.0052 5.9363 9.94124 6.24779C9.87726 6.55929 9.72343 6.84522 9.49875 7.07026L7.81875 8.75026C7.81875 8.75026 8.75025 15.2993 15.2497 16.1115Z"
+                        fill="currentColor" />
+                    </svg>
+                    <span>+7 (812) 123-45-67</span>
+                  </a>
+                </li>
+              </ul>
+              <div class="contacts__socials socials">
+                <ul class="socials__list list-reset">
+                  <li class="socials__item">
+                    <a href="#">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M20.665 3.717L2.935 10.554C1.725 11.04 1.732 11.715 2.713 12.016L7.265 13.436L17.797 6.791C18.295 6.488 18.75 6.651 18.376 6.983L9.843 14.684H9.841L9.843 14.685L9.529 19.377C9.989 19.377 10.192 19.166 10.45 18.917L12.661 16.767L17.26 20.164C18.108 20.631 18.717 20.391 18.928 19.379L21.947 5.151C22.256 3.912 21.474 3.351 20.665 3.717Z"
+                          fill="currentColor" />
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="socials__item">
+                    <a href="#">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M12 8.87578C10.2797 8.87578 8.87579 10.2797 8.87579 12C8.87579 13.7203 10.2797 15.1242 12 15.1242C13.7203 15.1242 15.1242 13.7203 15.1242 12C15.1242 10.2797 13.7203 8.87578 12 8.87578ZM21.3703 12C21.3703 10.7062 21.382 9.42422 21.3094 8.13281C21.2367 6.63281 20.8945 5.30156 19.7977 4.20469C18.6984 3.10547 17.3695 2.76562 15.8695 2.69297C14.5758 2.62031 13.2938 2.63203 12.0023 2.63203C10.7086 2.63203 9.42657 2.62031 8.13516 2.69297C6.63516 2.76562 5.30391 3.10781 4.20704 4.20469C3.10782 5.3039 2.76797 6.63281 2.69532 8.13281C2.62266 9.42656 2.63438 10.7086 2.63438 12C2.63438 13.2914 2.62266 14.5758 2.69532 15.8672C2.76797 17.3672 3.11016 18.6984 4.20704 19.7953C5.30625 20.8945 6.63516 21.2344 8.13516 21.307C9.42891 21.3797 10.7109 21.368 12.0023 21.368C13.2961 21.368 14.5781 21.3797 15.8695 21.307C17.3695 21.2344 18.7008 20.8922 19.7977 19.7953C20.8969 18.6961 21.2367 17.3672 21.3094 15.8672C21.3844 14.5758 21.3703 13.2937 21.3703 12ZM12 16.807C9.33985 16.807 7.19297 14.6602 7.19297 12C7.19297 9.33984 9.33985 7.19297 12 7.19297C14.6602 7.19297 16.807 9.33984 16.807 12C16.807 14.6602 14.6602 16.807 12 16.807ZM17.0039 8.11875C16.3828 8.11875 15.8813 7.61719 15.8813 6.99609C15.8813 6.375 16.3828 5.87344 17.0039 5.87344C17.625 5.87344 18.1266 6.375 18.1266 6.99609C18.1268 7.14357 18.0978 7.28964 18.0415 7.42593C17.9851 7.56222 17.9024 7.68606 17.7982 7.79034C17.6939 7.89463 17.57 7.97731 17.4338 8.03367C17.2975 8.09002 17.1514 8.11893 17.0039 8.11875Z"
+                          fill="currentColor" />
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="socials__item">
+                    <a href="#">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M11.9929 2C6.46824 2 2 6.5 2 12.0571C2 17.0714 5.65453 21.2429 10.4368 22V14.9714H7.89579V12.0571H10.4368V9.84286C10.4368 7.31429 11.9358 5.92857 14.2056 5.92857C15.3048 5.92857 16.4468 6.12857 16.4468 6.12857V8.6H15.1906C13.9486 8.6 13.5632 9.37143 13.5632 10.1714V12.0571H16.3326L15.8901 14.9714H13.5632V22C18.3455 21.2429 22 17.0857 22 12.0571C22 6.5 17.5318 2 12.0071 2H11.9929Z"
+                          fill="currentColor" />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="contacts__image">
+              <img src="./assets/img/contacts.png" width="600" height="600" alt="" aria-hidden="true">
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__wrapper">
+          <a href="#" class="footer__logo logo">
+            <span class="logo__img">
+              <img src="./assets/img/logo.png" width="50" height="50" alt="Логотип Interworld Travel.">
+            </span>
+            <span class="logo__text">
+              <img src="./assets/img/logo-text.svg" width="86" height="55" alt="Interworld Travel.">
+            </span>
+          </a>
+          <p>&copy; 2026. Все права защищены.</p>
+          <div class="footer__links">
+            <a href="https://rs.school/courses/javascript" class="footer__rsschool" target="_blank"
+              rel="nofollow noopener">
+              <img src="./assets/img/rs_school_js.svg" width="60" height="22" alt="Логотип RS School.">
+            </a>
+            <a href="https://github.com/MilaRut" class="footer__github" target="_blank" rel="nofollow noopener">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M11.9906 1.78829C6.19453 1.78594 1.5 6.47813 1.5 12.2695C1.5 16.8492 4.43672 20.7422 8.52656 22.1719C9.07734 22.3102 8.99297 21.9188 8.99297 21.6516V19.8352C5.8125 20.2078 5.68359 18.1031 5.47031 17.7516C5.03906 17.0156 4.01953 16.8281 4.32422 16.4766C5.04844 16.1039 5.78672 16.5703 6.64219 17.8336C7.26094 18.75 8.46797 18.5953 9.07969 18.443C9.21328 17.8922 9.49922 17.4 9.89297 17.018C6.59766 16.4273 5.22422 14.4164 5.22422 12.0258C5.22422 10.8656 5.60625 9.79922 6.35625 8.93907C5.87812 7.5211 6.40078 6.30703 6.47109 6.12657C7.83281 6.00469 9.24844 7.10157 9.35859 7.18829C10.132 6.97969 11.0156 6.86954 12.0047 6.86954C12.9984 6.86954 13.8844 6.98438 14.6648 7.19532C14.9297 6.99375 16.2422 6.05157 17.5078 6.16641C17.5758 6.34688 18.0867 7.53282 17.6367 8.93204C18.3961 9.79454 18.7828 10.8703 18.7828 12.0328C18.7828 14.4281 17.4 16.4414 14.0953 17.0227C14.3784 17.301 14.6031 17.633 14.7564 17.9992C14.9098 18.3654 14.9886 18.7585 14.9883 19.1555V21.7922C15.007 22.0031 14.9883 22.2117 15.3398 22.2117C19.4906 20.8125 22.4789 16.8914 22.4789 12.2719C22.4789 6.47813 17.782 1.78829 11.9906 1.78829Z"
+                  fill="currentColor" />
+              </svg>
+              <span>GitHub</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script type="module" src="./assets/js/script.js?v=0212242326"></script>
+</body>
+
+
+</html>
