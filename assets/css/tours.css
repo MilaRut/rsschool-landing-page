@@ -83,7 +83,6 @@ body {
   font-family: var(--font-main);
   font-size: var(--font-size-base);
   min-height: 100vh;
-  overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-padding-top: 97px;
 }
@@ -241,6 +240,11 @@ input[type="number"]::-webkit-inner-spin-button {
 .btn--secondary {
   color: var(--accent);
   transition: color var(--transition);
+  gap: 5px;
+}
+
+.btn--secondary span {
+  padding-bottom: 2px;
 }
 
 .btn--secondary:hover {
@@ -505,6 +509,20 @@ section.tours {
   width: calc(100% - 40px);
 }
 
+[data-popular="true"]::before {
+  position: absolute;
+  content: "Популярно";
+  top: -30px;
+  left: 0;
+  font-size: 16px;
+  font-family: var(--font-main);
+  font-weight: 500;
+  padding: 5px 10px;
+  background-color: var(--accent);
+  border-radius: 5px;
+  color: var(--bg-main);
+}
+
 .tours__info {
   display: flex;
   flex-direction: column;
@@ -590,6 +608,7 @@ section.tours {
 }
 
 .tours__btn {
+  min-width: 160px;
   height: 40px;
   padding: 10px 20px;
   margin: 0 auto;
@@ -606,6 +625,27 @@ section.tours {
 
 .tours__list:has(.is-hidden) ~ .tours__more-btn {
   display: block;
+}
+
+#skeleton.is-hidden {
+  display: none;
+}
+
+#skeleton .tours__item {
+  position: relative;
+  pointer-events: none;
+  animation: pulse 2s infinite;
+}
+
+#skeleton .tours__item::before {
+  position: absolute;
+  content: "";
+  inset: 0 0 0 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(11, 18, 32, 0.2);
+  backdrop-filter: blur(5px);
+  z-index: 100;
 }
 
 .contacts__wrapper {
@@ -716,7 +756,6 @@ section.tours {
 
 /* Modal */
 
-
 .modal {
   opacity: 0;
   pointer-events: none;
@@ -732,6 +771,10 @@ section.tours {
   background-color: rgba(41, 41, 41, 0.6);
   backdrop-filter: blur(10px);
   transition: all 0.3s ease-in;
+}
+
+.modal--preload {
+  transition: none;
 }
 
 .modal__content {
@@ -826,6 +869,7 @@ section.tours {
 .modal__name {
   font-family: var(--font-accent);
   font-size: 36px;
+  font-weight: 600;
 }
 
 .modal__location {
@@ -969,6 +1013,38 @@ input[type="radio"] {
   font-weight: 600;
 }
 
+#success-modal .modal__content {
+  text-align: center;
+  align-items: center;
+}
+
+#success-modal h2 {
+  font-size: 28px;
+}
+
+#success-modal p {
+  font-size: 18px;
+  max-width: 80%;
+}
+
+#success-modal a {
+  color: var(--accent);
+  transition: opacity var(--transition);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (hover: hover) {
+  #success-modal a:hover {
+    opacity: 0.7;
+  }
+}
+
+.modal__logo {
+  width: 150px;
+  height: 150px;
+}
+
 /* Light */
 
 body.light {
@@ -1084,6 +1160,11 @@ body.light .tours__image::after {
   background: linear-gradient(0deg, rgba(243, 239, 222, 0.7) 0%, rgba(11, 18, 32, 0) 100%);
 }
 
+body.light [data-popular="true"]::before {
+  background-color: var(--border-dark);
+  color: var(--text-primary);
+}
+
 body.light .tours__info {
   background-color: var(--accent-light);
 }
@@ -1116,6 +1197,7 @@ body.light .footer__rsschool {
 
 body.light .modal__content {
   background-color: var(--accent-light);
+  border-color: var(--accent);
 }
 
 body.light .modal__note-wrapper:has(p) {
@@ -1155,6 +1237,10 @@ body.light .modal__summary {
 body.light .modal__close-btn::before,
 body.light .modal__close-btn::after {
   background-color: var(--bg-main);
+}
+
+body.light #success-modal a {
+  color: var(--border-dark);
 }
   
 @media (hover: hover) {
@@ -1405,6 +1491,7 @@ body.light .modal__close-btn::after {
   }
 
   .modal__name {
+    font-size: 24px;
     line-height: 1;
   }
 
@@ -1462,5 +1549,17 @@ body.light .modal__close-btn::after {
 
   100% {
     transform: rotate(0deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
   }
 }

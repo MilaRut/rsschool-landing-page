@@ -3,7 +3,7 @@ function setHeaderOnScroll() {
   const themeToggle = document.querySelector('.header__theme-switcher');
   const SCROLL_THRESHOLD = 100;
 
-  window.addEventListener('scroll', () => {
+  function updateHeaderState() {
     const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
     if (currentScrollPosition < SCROLL_THRESHOLD) {
       header.classList.add('header--transparent');
@@ -12,7 +12,11 @@ function setHeaderOnScroll() {
       header.classList.remove('header--transparent');
       themeToggle.classList.add('is-transformed');
     }
-  });
+  }
+
+  updateHeaderState();
+
+  window.addEventListener('scroll', updateHeaderState);
 }
 
 export {setHeaderOnScroll};

@@ -228,7 +228,13 @@ summary::marker {
 .btn--secondary {
   color: var(--accent);
   transition: color var(--transition);
+  gap: 5px;
 }
+
+.btn--secondary span {
+  padding-bottom: 2px;
+}
+
 
 .btn--secondary:hover {
   color: var(--accent-bright);
@@ -1327,5 +1333,59 @@ body.light .footer__rsschool {
 
   100% {
     transform: rotate(0deg);
+  }
+}
+
+/* Gallery */
+.gal-slider {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.gal-slide {
+  flex: 1;
+  transition: all 500ms ease-in-out;
+  cursor: pointer;
+}
+
+.gal-slide.is-active {
+  flex: 10;
+}
+
+.gal-slide .popular__image {
+  max-height: 100%;
+  transition: all 0.3s ease-in 0.4s;
+}
+
+.gal-slide .popular__info {
+  transition: all 0.3s ease-in 0.4s;
+  transform: translateY(150%);
+  transform-origin: bottom center;
+}
+
+.gal-slide.is-active .popular__info {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .gal-slider {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .gal-slide.is-active,
+  .gal-slide {
+    flex: auto;
+  }
+
+  .gal-slide.is-active .popular__image,
+  .gal-slide .popular__image {
+    max-height: 55%;
+  }
+  
+  .gal-slide.is-active .popular__info,
+  .gal-slide .popular__info {
+    transform: none;
   }
 }

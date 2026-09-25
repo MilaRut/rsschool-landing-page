@@ -4,13 +4,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Авторские туры по вымышленным мирам: от Средиземья до далекой галактики">
   <title>Interworld Travel</title>
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Interworld Travel — путешествия, о которых вы мечтали">
+  <meta property="og:description" content="Авторские туры по вымышленным мирам: от Средиземья до далекой галактики">
+  <meta property="og:url" content="https://milarut.github.io/rsschool-landing-page/">
+  <meta property="og:image" content="https://milarut.github.io/rsschool-landing-page/assets/img/about-img.png">
+  <meta property="og:site_name" content="Interworld Travel">
 
   <link rel="icon" type="image/png" href="./assets/favicon/favicon-96x96.png" sizes="96x96">
   <link rel="icon" type="image/svg+xml" href="./assets/favicon//favicon.svg">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon//apple-touch-icon.png">
   <link rel="manifest" href="./assets/favicon//site.webmanifest">
+
+  <link rel="preload" href="./assets/fonts/CormorantGaramond-Regular.woff2" type="font/woff2" as="font"
+    crossorigin="anonymous">
+  <link rel="preload" href="./assets/fonts/GothamPro-Bold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="./assets/fonts/GothamPro.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="./assets/fonts/GothamPro-Medium.woff2" type="font/woff2" as="font" crossorigin="anonymous">
 
   <link rel="stylesheet" href="./assets/css/tours.css">
 </head>
@@ -60,7 +74,7 @@
                 <a class="nav__link nav__link--anchor" href="#contacts">Контакты</a>
               </li>
               <li class="nav__item">
-                <a class="nav__link btn btn--primary" href="#">
+                <a class="nav__link success-btn btn btn--primary" href="#">
                   <span>Забронировать</span>
                 </a>
               </li>
@@ -85,7 +99,49 @@
             <button class="tours__tabs-btn tabs-btn" data-tab="pratchett">Плоский мир</button>
           </div>
           <div class="tours__content">
-            <ul class="tours__list list-reset"></ul>
+            <ul class="tours__list list-reset" id="skeleton">
+              <li class="tours__item">
+                <div class="tours__image">
+                  <h2 class="tours__name"></h2>
+                </div>
+                <div class="tours__info">
+                  <span class="tours__location"></span>
+                  <p class="tours__description"></p>
+                  <p class="tours__btn btn btn--primary"><span></span></з>
+                </div>
+              </li>
+              <li class="tours__item">
+                <div class="tours__image">
+                  <h2 class="tours__name"></h2>
+                </div>
+                <div class="tours__info">
+                  <span class="tours__location"></span>
+                  <p class="tours__description"></p>
+                  <p class="tours__btn btn btn--primary"><span></span></з>
+                </div>
+              </li>
+              <li class="tours__item">
+                <div class="tours__image">
+                  <h2 class="tours__name"></h2>
+                </div>
+                <div class="tours__info">
+                  <span class="tours__location"></span>
+                  <p class="tours__description"></p>
+                  <p class="tours__btn btn btn--primary"><span></span></з>
+                </div>
+              </li>
+              <li class="tours__item">
+                <div class="tours__image">
+                  <h2 class="tours__name"></h2>
+                </div>
+                <div class="tours__info">
+                  <span class="tours__location"></span>
+                  <p class="tours__description"></p>
+                  <p class="tours__btn btn btn--primary"><span></span></з>
+                </div>
+              </li>
+            </ul>
+            <ul class="tours__list list-reset" id="tours-list"></ul>
             <button class="tours__more-btn btn tours__tabs-btn">
               <span>Показать ещё</span>
             </button>
@@ -204,7 +260,7 @@
 
   </div>
 
-  <div class="modal">
+  <div class="modal modal--preload" id="order-modal">
     <div class="modal__content">
       <button class="modal__close-btn"></button>
       <div class="modal__top">
@@ -270,13 +326,29 @@
             Стоимость:
             <p class="modal__summary"></p>
           </div>
-          <button class="modal__order-btn btn btn--primary">
+          <button class="modal__order-btn success-btn btn btn--primary">
             <span>Отправить заявку</span>
           </button>
         </div>
       </div>
     </div>
+  </div>
 
+  <div class="modal modal--preload" id="success-modal">
+    <div class="modal__content">
+      <button class="modal__close-btn"></button>
+      <h2>Спасибо за вашу заявку!</h2>
+      <p>Мы свяжемся с&nbsp;вами по&nbsp;тайному телепатическому каналу для&nbsp;обсуждения деталей поездки.</p>
+      <div class="modal__logo">
+        <img src="./assets/img/logo.svg" width="150" height="150" alt="Логотип Interworld Travel">
+      </div>
+      <p>А если серьезно — благодарю, что зашли на&nbsp;эту страницу!<br>Надеюсь, вам понравилось мое творчество ㋛</p>
+      <p>По всем вопросам со мной можно связаться в&nbsp;<a href="https://t.me/degusyanz" target="_blank"
+          rel="nofollow noopener">телеграме</a> или&nbsp;<a href="https://discord.com/users/932258504213938207"
+          target="_blank" rel="nofollow noopener">дискорде</a>, а также написать мне на <a
+          href="mailto:milarut.dev@gmail.com">milarut.dev@gmail.com</a>.
+      </p>
+    </div>
   </div>
 
   <script type="module" src="./assets/js/script.js?v=0212242326"></script>

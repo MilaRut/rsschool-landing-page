@@ -6,6 +6,10 @@ import { initSlider } from "./modules/slider.js";
 import { handleTabs, renderInitial } from "./modules/tabs.js";
 import { showMore } from "./modules/show-more.js";
 import { handleControls } from "./modules/modal.js";
+import { showSuccess } from "./modules/success.js";
+import { setSelectedCat } from "./modules/popular.js";
+import { slidesPlugin } from "./modules/gallery.js";
+const modals = document.querySelectorAll('.modal');
 
 window.addEventListener('DOMContentLoaded', () => {
   loadCurrentTheme();
@@ -20,4 +24,13 @@ window.addEventListener('DOMContentLoaded', () => {
   renderInitial();
   showMore();
   handleControls();
+  showSuccess();
+  setSelectedCat();
+  slidesPlugin();
+  
+  window.addEventListener('load', () => {
+    modals.forEach((el) => {
+      el.classList.remove('modal--preload');
+    });
+  });
 });
