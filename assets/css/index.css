@@ -180,6 +180,20 @@ summary::marker {
   content: "";
 }
 
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-dark);
+  border-radius: 10px;
+}
+
 /* Styles */
 
 .btn {
@@ -1024,6 +1038,14 @@ details[open] .faq__question-icon {
 body.light {
   background-color: var(--text-primary);
   color: var(--bg-main);
+}
+
+body.light::-webkit-scrollbar-track {
+  background: var(--hover-blue);
+}
+
+body.light::-webkit-scrollbar-thumb {
+  background: var(--bg-secondary);
 }
 
 body.light .header {
