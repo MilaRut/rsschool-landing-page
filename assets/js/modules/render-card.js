@@ -2,13 +2,14 @@ export const mediaQueriesMob = window.matchMedia('(max-width: 768px)');
 import { createElement } from './create-element.js'
 import { renderModal } from './modal.js';
 
+const url = new URL('../../data/tours.json', import.meta.url);
 const toursList = document.querySelector('#tours-list');
 const showMoreBtn = document.querySelector('.tours__more-btn');
 const modal = document.querySelector('.modal');
 const skeleton = document.querySelector('#skeleton');
 
 async function getData() {
-  const response = await fetch('../assets/data/tours.json');
+  const response = await fetch(url);
   if (!response.ok) {
     throw new Error(`Ошибка загрузки: ${response.status}`);
   }
