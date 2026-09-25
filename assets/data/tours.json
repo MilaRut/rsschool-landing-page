@@ -264,7 +264,8 @@
     "note": "",
     "rating": 4.9,
     "danger": 1.0,
-    "price": 3.0
+    "price": 3.0,
+    "popular": true
   },
   {
     "category": "witcher",
@@ -517,7 +518,8 @@
     "note": "Фото на документы после поездки могут выглядеть подозрительно.",
     "rating": 4.8,
     "danger": 4.0,
-    "price": 2.0
+    "price": 2.0,
+    "popular": true
   },
   {
     "category": "lovecraft",
@@ -726,7 +728,8 @@
     "note": "",
     "rating": 4.6,
     "danger": 3.0,
-    "price": 2.0
+    "price": 2.0,
+    "popular": true
   },
   {
     "category": "pratchett",
