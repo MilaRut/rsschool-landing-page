@@ -203,6 +203,13 @@ input[type="number"]::-webkit-inner-spin-button {
   font-family: var(--font-main);
   line-height: 1;
   letter-spacing: -0.5px;
+  cursor: pointer;
+}
+
+.btn span,
+.btn svg {
+  z-index: 10;
+  pointer-events: none;
 }
 
 .btn--primary {
@@ -214,12 +221,6 @@ input[type="number"]::-webkit-inner-spin-button {
   border-radius: var(--spacing-md);
   gap: 8px;
   overflow: hidden;
-}
-
-.btn--primary span,
-.btn--primary svg {
-  z-index: 10;
-  pointer-events: none;
 }
 
 .btn--primary::after {
@@ -498,6 +499,7 @@ section.tours {
   padding: 5px 7px;
   border-radius: var(--spacing-sm);
   background-color: var(--border-dark);
+  font-size: 12px;
 }
 
 .tours__name {
@@ -548,11 +550,24 @@ section.tours {
 }
 
 .tours__note {
+  position: relative;
   font-size: 14px;
   line-height: 1.1;
   padding: 10px;
-  border: 3px dotted var(--accent);
-  width: fit-content;  
+  text-align: center;
+  padding-top: 40px;
+}
+
+.tours__note::before {
+  position: absolute;
+  content: "";
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 40px;
+  background: url("../img/venzel.png") center no-repeat;
+  background-size: contain;
 }
 
 .tours__parameters {
@@ -884,20 +899,23 @@ section.tours {
 }
 
 .modal__note-wrapper:has(p) {
-  border-left: 5px solid var(--border-dark);
+  border-right: 2px solid var(--accent);
   margin-top: 10px;
-  padding: 5px 0 5px 20px;
+  padding: 5px 20px 5px 0;
 }
 
 .modal__note {
   font-size: 14px;
   opacity: 0.7;
+  text-align: right;
 }
 
 .modal__divider {
-  width: 100%;
-  height: 2px;
-  background-color: var(--border-dark);
+  width: 80%;
+  min-height: 40px;
+  background: url("../img/venzel.png") center no-repeat;
+  background-size: cover;
+  margin: 0 auto;
 }
 
 .modal__bottom {
@@ -929,7 +947,7 @@ fieldset {
 
 #quantity {
   width: 50px;
-  height: 30px;
+  height: 40px;
   background-color: var(--bg-main);
   color: var(--text-primary);
   border: 1px solid var(--accent);
@@ -947,6 +965,7 @@ fieldset {
 .minus {
   background-color: var(--accent);
   width: 40px;
+  height: 40px;
   border-radius: 5px;
   font-size: 20px;
   line-height: 1;
@@ -969,7 +988,7 @@ label:has(input[type="radio"]) {
 
 label:has(input[type="radio"]) span {
   display: flex;
-  padding: 5px 10px;
+  padding: 10px;
   border: 1px solid var(--accent);
   border-radius: 5px;
   cursor: pointer;
@@ -1002,7 +1021,6 @@ input[type="radio"] {
   align-items: center;
   justify-content: space-between;
   gap: var(--spacing-md);
-  flex-wrap: wrap;  
 }
 
 .modal__summary {
@@ -1013,7 +1031,7 @@ input[type="radio"] {
 
 .modal__order-btn {
   min-height: 40px;
-  padding: 10px 20px;
+  padding: 14px 20px;
   font-size: 18px;
   font-weight: 600;
 }
@@ -1174,8 +1192,8 @@ body.light .tours__info {
   background-color: var(--accent-light);
 }
 
-body.light .tours__note {
-  border-color: var(--hover-blue);
+body.light .tours__note::before {
+  filter: invert(0.6);  
 }
 
 body.light .tours__parameters {
@@ -1205,12 +1223,17 @@ body.light .modal__content {
   border-color: var(--accent);
 }
 
+body.light .modal__close-btn::before,
+body.light .modal__close-btn::after {
+  background-color: var(--bg-main);
+}
+
 body.light .modal__note-wrapper:has(p) {
-  border-color: var(--accent);
+  border-color: var(--hover-blue);
 }
 
 body.light .modal__divider {
-  background-color: var(--accent);
+  filter: invert(0.6);
 }
 
 body.light .plus, 
@@ -1237,11 +1260,6 @@ body.light label:has(input[type="radio"]:checked) span {
 
 body.light .modal__summary {
   color: var(--border-dark);
-}
-
-body.light .modal__close-btn::before,
-body.light .modal__close-btn::after {
-  background-color: var(--bg-main);
 }
 
 body.light #success-modal a {
@@ -1482,24 +1500,23 @@ body.light #success-modal a {
     line-height: 1;
   }
 
+  .modal__divider {
+    width: 100%;
+    background-size: contain;
+  }
+
   .modal__controls {
     flex-direction: column;
     align-items: center;
     width: 100%;
   }
 
-  #quantity {
-    width: 60px;
-  }
-  
-  #quantity,
-  .plus, 
-  .minus {
-    height: 50px;
+  .modal__output {
+    flex-direction: column;
   }
 
-  label:has(input[type="radio"]) span {
-    padding: 12px 7px;
+  #success-modal p {
+    max-width: 100%;
   }
 
   body.light .header__menu-toggle span,

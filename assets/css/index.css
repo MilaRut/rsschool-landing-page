@@ -191,6 +191,13 @@ summary::marker {
   font-family: var(--font-main);
   line-height: 1;
   letter-spacing: -0.5px;
+  cursor: pointer;
+}
+
+.btn span,
+.btn svg {
+  z-index: 10;
+  pointer-events: none;
 }
 
 .btn--primary {
@@ -202,12 +209,6 @@ summary::marker {
   border-radius: var(--spacing-md);
   gap: 8px;
   overflow: hidden;
-}
-
-.btn--primary span,
-.btn--primary svg {
-  z-index: 10;
-  pointer-events: none;
 }
 
 .btn--primary::after {
@@ -623,7 +624,7 @@ section.advantages {
   line-height: 1.5;
 }
 
-.slide {
+.slide:not(.is-visible) {
   opacity: 0;
   position: absolute;
   transition: opacity 0.5s ease; 
@@ -679,7 +680,7 @@ section.advantages {
   margin-bottom: 8px;
 }
 
-.reviews__item-location {
+.reviews__item-tour {
   font-size: 14px;
   opacity: 0.7;
 }
@@ -695,6 +696,10 @@ section.advantages {
   background: url("../img/star.svg");
   background-repeat: repeat-x;
   margin-top: auto;
+}
+
+.reviews__item-btn {
+  display: inline-flex;
 }
 
 .faq__title {
@@ -876,6 +881,144 @@ details[open] .faq__question-icon {
   color: var(--accent)
 }
 
+/* Modal */
+
+.modal {
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(41, 41, 41, 0.6);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease-in;
+}
+
+.modal--preload {
+  transition: none;
+}
+
+.modal__content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 900px;
+  max-height: 100vh;
+  gap: var(--spacing-lg);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--spacing-md);
+  box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
+  padding: 40px;
+  transform: scale(0);
+  transition: transform 0.3s ease-in;
+  overflow-y: auto;
+}
+
+.modal.is-active {
+  opacity: 1;
+  pointer-events: all;
+  transition: all 0.3s ease-in;
+}
+
+.modal.is-active .modal__content {
+  transform: scale(1);
+  transition: transform 0.3s ease-in;
+}
+
+.modal__close-btn {
+  position: absolute;
+  display: flex;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  transition: opacity var(--transition);
+}
+
+@media (hover: hover) {
+  .modal__close-btn:hover {
+    opacity: 0.7;
+  }
+}
+
+.modal__close-btn::before,
+.modal__close-btn::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 2px;
+  background-color: var(--text-primary);
+}
+
+.modal__close-btn::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.modal__close-btn::before {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.review-modal .modal__content {
+  gap: var(--spacing-sm);
+}
+
+.review-modal__header {
+  display: flex;
+  gap: 16px;
+}
+
+.review-modal__avatar {
+  width: 100px;
+  min-width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.review-modal__author {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.review-modal__location {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.review-modal__text {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.review-modal__rating {
+  width: 120px;
+  height: 24px;
+  background: url("../img/star.svg");
+  background-repeat: repeat-x;
+  margin-top: auto;
+}
+
+.review-modal__tour {
+  font-family: var(--font-accent);
+  font-size: 24px;
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.review-modal__text {
+  margin-bottom: var(--spacing-lg);
+}
+
 /* Light */
 
 body.light {
@@ -1029,6 +1172,16 @@ body.light .faq__item:hover {
 
 body.light .footer__rsschool {
   filter: invert(0);
+}
+
+body.light .modal__content {
+  background-color: var(--accent-light);
+  border-color: var(--accent);
+}
+
+body.light .modal__close-btn::before,
+body.light .modal__close-btn::after {
+  background-color: var(--bg-main);
 }
 
 /* Mobile */
@@ -1239,7 +1392,15 @@ body.light .footer__rsschool {
   }
 
   .reviews__item {
-    min-height: 450px;
+    min-height: 470px;
+  }
+
+  .reviews__item-author {
+    font-size: 16px;
+  }
+
+  .reviews__item-tour {
+    font-size: 14px;
   }
 
   .pagination {
@@ -1298,6 +1459,29 @@ body.light .footer__rsschool {
 
   .footer__wrapper {
     flex-direction: column;
+  }
+  
+  .modal__content {
+    padding: 50px 20px 30px;
+  }
+
+  .modal__close-btn {
+    top: 10px;
+    right: 10px;
+  }
+
+  .review-modal__header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .review-modal__author {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .review-modal__location {
+    text-align: center;
   }
 
   body.light .header__menu-toggle span,
