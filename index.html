@@ -4,13 +4,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Авторские туры по вымышленным мирам: от Средиземья до далекой галактики">
   <title>Interworld Travel</title>
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Interworld Travel — путешествия, о которых вы мечтали">
+  <meta property="og:description" content="Авторские туры по вымышленным мирам: от Средиземья до далекой галактики">
+  <meta property="og:url" content="https://milarut.github.io/rsschool-landing-page/">
+  <meta property="og:image" content="https://milarut.github.io/rsschool-landing-page/assets/img/about-img.png">
+  <meta property="og:site_name" content="Interworld Travel">
 
   <link rel="icon" type="image/png" href="./assets/favicon/favicon-96x96.png" sizes="96x96">
   <link rel="icon" type="image/svg+xml" href="./assets/favicon//favicon.svg">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon//apple-touch-icon.png">
   <link rel="manifest" href="./assets/favicon//site.webmanifest">
+
+  <link rel="preload" href="./assets/fonts/CormorantGaramond-Regular.woff2" type="font/woff2" as="font"
+    crossorigin="anonymous">
+  <link rel="preload" href="./assets/fonts/GothamPro-Bold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="./assets/fonts/GothamPro.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="./assets/fonts/GothamPro-Medium.woff2" type="font/woff2" as="font" crossorigin="anonymous">
 
   <link rel="stylesheet" href="./assets/css/index.css">
 </head>
@@ -124,15 +138,15 @@
               </svg>
             </a>
           </div>
-          <ul class="popular__list list-reset">
-            <li class="popular__item">
+          <ul class="popular__list gal-slider list-reset">
+            <li class="popular__item gal-slide">
               <div class="popular__image">
-                <img src="./assets/img/westeros.webp" width="300" height="300" alt="Карта Вестероса.">
+                <img src="./assets/img/tours/tour-martin-0.webp" width="300" height="300" alt="Карта Вестероса.">
               </div>
               <div class="popular__info">
                 <h3 class="popular__name">Обзорный тур: Семь столиц Вестероса</h3>
                 <p class="popular__description">Тур по всем столицам Семи Королевств. Самый полный маршрут.</p>
-                <button class="popular__btn btn btn--primary">
+                <button class="popular__btn btn btn--primary" data-cat="martin">
                   <span>Подробнее</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4 12H20M13 19L20 12L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -141,14 +155,14 @@
                 </button>
               </div>
             </li>
-            <li class="popular__item">
+            <li class="popular__item gal-slide">
               <div class="popular__image">
-                <img src="./assets/img/hogsmid.jpg" width="300" height="300" alt="Фото Хогсмида.">
+                <img src="./assets/img/tours/tour-rowling-0.webp" width="300" height="300" alt="Фото Хогсмида.">
               </div>
               <div class="popular__info">
                 <h3 class="popular__name">Гастротур по заведениям Хогсмида</h3>
                 <p class="popular__description">Мир волшебства и гастрономических удовольствий.</p>
-                <button class="popular__btn btn btn--primary">
+                <button class="popular__btn btn btn--primary" data-cat="rowling">
                   <span>Подробнее</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4 12H20M13 19L20 12L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -157,15 +171,99 @@
                 </button>
               </div>
             </li>
-            <li class="popular__item">
+            <li class="popular__item gal-slide">
               <div class="popular__image">
-                <img src="./assets/img/gondor.jpg" width="300" height="300"
+                <img src="./assets/img/tours/tour-tolkien-0.webp" width="300" height="300"
                   alt="Изображеие крепости Минас-Тирит в Гондоре.">
               </div>
               <div class="popular__info">
                 <h3 class="popular__name">Гондор: белые города и королевские дороги</h3>
                 <p class="popular__description">Величественные крепости и исторические дороги юга Средиземья.</p>
-                <button class="popular__btn btn btn--primary">
+                <button class="popular__btn btn btn--primary" data-cat="tolkien">
+                  <span>Подробнее</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 12H20M13 19L20 12L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </li>
+            <li class="popular__item gal-slide">
+              <div class="popular__image">
+                <img src="./assets/img/tours/tour-rowling-0.webp" width="300" height="300" alt="Фото Хогсмида.">
+              </div>
+              <div class="popular__info">
+                <h3 class="popular__name">Гастротур по заведениям Хогсмида</h3>
+                <p class="popular__description">Мир волшебства и гастрономических удовольствий.</p>
+                <button class="popular__btn btn btn--primary" data-cat="rowling">
+                  <span>Подробнее</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 12H20M13 19L20 12L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </li>
+            <li class="popular__item gal-slide">
+              <div class="popular__image">
+                <img src="./assets/img/tours/tour-tolkien-0.webp" width="300" height="300"
+                  alt="Изображеие крепости Минас-Тирит в Гондоре.">
+              </div>
+              <div class="popular__info">
+                <h3 class="popular__name">Гондор: белые города и королевские дороги</h3>
+                <p class="popular__description">Величественные крепости и исторические дороги юга Средиземья.</p>
+                <button class="popular__btn btn btn--primary" data-cat="tolkien">
+                  <span>Подробнее</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 12H20M13 19L20 12L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </li>
+          </ul>
+          <ul class="popular__list list-reset">
+            <li class="popular__item">
+              <div class="popular__image">
+                <img src="./assets/img/tours/tour-martin-0.webp" width="300" height="300" alt="Карта Вестероса.">
+              </div>
+              <div class="popular__info">
+                <h3 class="popular__name">Обзорный тур: Семь столиц Вестероса</h3>
+                <p class="popular__description">Тур по всем столицам Семи Королевств. Самый полный маршрут.</p>
+                <button class="popular__btn btn btn--primary" data-cat="martin">
+                  <span>Подробнее</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 12H20M13 19L20 12L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </li>
+            <li class="popular__item">
+              <div class="popular__image">
+                <img src="./assets/img/tours/tour-rowling-0.webp" width="300" height="300" alt="Фото Хогсмида.">
+              </div>
+              <div class="popular__info">
+                <h3 class="popular__name">Гастротур по заведениям Хогсмида</h3>
+                <p class="popular__description">Мир волшебства и гастрономических удовольствий.</p>
+                <button class="popular__btn btn btn--primary" data-cat="rowling">
+                  <span>Подробнее</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 12H20M13 19L20 12L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </li>
+            <li class="popular__item">
+              <div class="popular__image">
+                <img src="./assets/img/tours/tour-tolkien-0.webp" width="300" height="300"
+                  alt="Изображеие крепости Минас-Тирит в Гондоре.">
+              </div>
+              <div class="popular__info">
+                <h3 class="popular__name">Гондор: белые города и королевские дороги</h3>
+                <p class="popular__description">Величественные крепости и исторические дороги юга Средиземья.</p>
+                <button class="popular__btn btn btn--primary" data-cat="tolkien">
                   <span>Подробнее</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4 12H20M13 19L20 12L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
