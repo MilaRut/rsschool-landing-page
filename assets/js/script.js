@@ -9,6 +9,7 @@ import { handleControls } from "./modules/modal.js";
 import { showSuccess } from "./modules/success.js";
 import { setSelectedCat } from "./modules/popular.js";
 import { slidesPlugin } from "./modules/gallery.js";
+import { openReviewsModal } from "./modules/reviews.js";
 const modals = document.querySelectorAll('.modal');
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -27,6 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
   showSuccess();
   setSelectedCat();
   slidesPlugin();
+  openReviewsModal();
   
   window.addEventListener('load', () => {
     modals.forEach((el) => {
