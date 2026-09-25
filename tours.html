@@ -16,32 +16,34 @@
 </head>
 
 <body>
+  <script type="text/javascript">
+    const body = document.querySelector('body');
+    if (localStorage.getItem('data-theme') === 'light') {
+      body.classList.add('light');
+    }
+  </script>
   <div class="wrapper">
     <header class="header header--transparent">
       <div class="container">
         <div class="header__content">
           <a href="index.html" class="header__logo logo">
             <span class="logo__img">
-              <img src="./assets/img/logo.png" width="50" height="50" alt="Логотип Interworld Travel.">
+              <img src="./assets/img/logo.svg" width="50" height="50" alt="Логотип Interworld Travel.">
             </span>
             <span class="logo__text">
               <img src="./assets/img/logo-text.svg" width="86" height="55" alt="Interworld Travel.">
             </span>
           </a>
-          <button class="header__theme-switcher" aria-label="Переключить тему">
-            <img class="light" src="./assets/img/lamp-light.png" width="100" height="133" alt="" aria-hidden="true">
-            <img class="dark" src="./assets/img/lamp-dark.png" width="100" height="133" alt="" aria-hidden="true"
-              style="display: none;">
-            <img class="hanger light" src="./assets/img/hanger-light.png" alt="" aria-hidden="true">
-            <img class="hanger dark" src="./assets/img/hanger-dark.png" alt="" aria-hidden="true"
-              style="display: none;">
+          <button class="header__theme-switcher" aria-label="Переключить тему" title="Переключить тему">
+            <img class="lamp" src="./assets/img/lamp-dark.png" width="100" height="133" alt="" aria-hidden="true">
+            <img class="hanger" src="./assets/img/hanger-dark.png" alt="" aria-hidden="true">
             <span class="header__theme-switcher-bg"></span>
           </button>
           <button class="header__menu-toggle js-dropdown-trigger" data-id="#nav" aria-label="Открыть меню">
             <span></span>
           </button>
-          <nav class="header__nav nav" id="nav">
-            <ul class="nav__list list-reset preload">
+          <nav class="header__nav nav">
+            <ul class="nav__list list-reset preload" id="nav">
               <li class="nav__item">
                 <a class="nav__link nav__link--anchor" href="index.html#about">О нас</a>
               </li>
@@ -72,296 +74,18 @@
         <div class="container">
           <h1 class="tours__title title">Каталог туров</h1>
           <div class="tours__tabs">
-            <button class="tours__tabs-btn is-active" data-tab="martin">Лед и Пламя</button>
-            <button class="tours__tabs-btn" data-tab="rowling">Гарри Поттер</button>
-            <button class="tours__tabs-btn" data-tab="tolkien">Средиземье</button>
-            <button class="tours__tabs-btn" data-tab="starwars">Звёздные войны</button>
-            <button class="tours__tabs-btn" data-tab="witcher">Ведьмак</button>
-            <button class="tours__tabs-btn" data-tab="exo">Ехо</button>
-            <button class="tours__tabs-btn" data-tab="lovecraft">Лавкрафт</button>
-            <button class="tours__tabs-btn" data-tab="dune">Дюна</button>
-            <button class="tours__tabs-btn" data-tab="pratchett">Плоский мир</button>
+            <button class="tours__tabs-btn tabs-btn is-active" data-tab="martin">Лед и Пламя</button>
+            <button class="tours__tabs-btn tabs-btn" data-tab="rowling">Гарри Поттер</button>
+            <button class="tours__tabs-btn tabs-btn" data-tab="tolkien">Средиземье</button>
+            <button class="tours__tabs-btn tabs-btn" data-tab="starwars">Звёздные войны</button>
+            <button class="tours__tabs-btn tabs-btn" data-tab="witcher">Ведьмак</button>
+            <button class="tours__tabs-btn tabs-btn" data-tab="exo">Ехо</button>
+            <button class="tours__tabs-btn tabs-btn" data-tab="lovecraft">Лавкрафт</button>
+            <button class="tours__tabs-btn tabs-btn" data-tab="dune">Дюна</button>
+            <button class="tours__tabs-btn tabs-btn" data-tab="pratchett">Плоский мир</button>
           </div>
           <div class="tours__content">
-            <ul class="tours__list list-reset is-active" data-id="martin">
-              <li class="tours__item">
-                <div class="tours__image">
-                  <img src="./assets/img/tours/tour-martin-1.webp" alt="Вольные города." width="400" height="280">
-                  <span class="tours__category">Волонтёрство</span>
-                  <h2 class="tours__tour-title">Волонтёрская миссия в «домах подушек»</h2>
-                </div>
-                <div class="tours__info">
-                  <span class="tours__location">Вольные города, Эссос</span>
-                  <p class="tours__description">Гуманитарная поездка для взрослых волонтёров: помощь в проведении
-                    лекций о здоровье, психологических тренингов, а также вручение подарочных наборов подопечным миссии.
-                    Проживание в уютных городских гостиницах.</p>
-                  <p class="tours__note">Строго 18+</p>
-                  <div class="tours__parameters">
-                    <div class="tours__parameter tours__parameter--rating">
-                      <span class="tours__parameter-label">Рейтинг:</span>
-                      <span class="tours__parameter-value">4,6</span>
-                    </div>
-                    <div class="tours__parameter tours__parameter--danger">
-                      <span class="tours__parameter-label">Опасность:</span>
-                      <span class="tours__parameter-value" data-value="1"></span>
-                    </div>
-                    <div class="tours__parameter tours__parameter--price">
-                      <span class="tours__parameter-label">Цена:</span>
-                      <span class="tours__parameter-value" data-value="2"></span>
-                    </div>
-                  </div>
-                  <button class="tours__btn btn btn--primary">
-                    <span>Хочу сюда!</span>
-                  </button>
-                </div>
-              </li>
-              <li class="tours__item">
-                <div class="tours__image">
-                  <img src="./assets/img/tours/tour-martin-2.webp" alt="Восхождение на Кулак первых людей." width="400"
-                    height="280">
-                  <span class="tours__category">Экстрим</span>
-                  <h2 class="tours__tour-title">Восхождение на Кулак первых людей</h2>
-                </div>
-                <div class="tours__info">
-                  <span class="tours__location">Земли за стеной, Вестерос</span>
-                  <p class="tours__description">Суровый поход за Стену к древней горной крепости: ледяные
-                    тропы, северные легенды и захватывающие виды на земли одичалых. В расширенный пакет входят гонки на
-                    лютовольчьих упряжках</p>
-                  <p class="tours__note">Походное снаряжение и теплую одежду участники покупают самостоятельно</p>
-                  <div class="tours__parameters">
-                    <div class="tours__parameter tours__parameter--rating">
-                      <span class="tours__parameter-label">Рейтинг:</span>
-                      <span class="tours__parameter-value">4,8</span>
-                    </div>
-                    <div class="tours__parameter tours__parameter--danger">
-                      <span class="tours__parameter-label">Опасность:</span>
-                      <span class="tours__parameter-value" data-value="5"></span>
-                    </div>
-                    <div class="tours__parameter tours__parameter--price">
-                      <span class="tours__parameter-label">Цена:</span>
-                      <span class="tours__parameter-value" data-value="3"></span>
-                    </div>
-                  </div>
-                  <button class="tours__btn btn btn--primary">
-                    <span>Хочу сюда!</span>
-                  </button>
-                </div>
-              </li>
-
-              <li class="tours__item">
-                <div class="tours__image">
-                  <img src="./assets/img/tours/tour-martin-3.webp" alt="Турнир в Эшфорде." width="400" height="280">
-                  <span class="tours__category">События</span>
-                  <h2 class="tours__tour-title">Турнир в Эшфорде</h2>
-                </div>
-                <div class="tours__info">
-                  <span class="tours__location">Эшфорд, Вестерос</span>
-                  <p class="tours__description">Посещение легендарного рыцарского турнира: зрелищные
-                    поединки на копьях, атмосфера рыцарства, пиры под открытым небом, ярмарка ремесленников и шанс
-                    увидеть лучших рыцарей и лордов Семи Королевств.</p>
-                  <p class="tours__note">Для желающих будет организован мастер-класс по владению копьем</p>
-                  <div class="tours__parameters">
-                    <div class="tours__parameter tours__parameter--rating">
-                      <span class="tours__parameter-label">Рейтинг:</span>
-                      <span class="tours__parameter-value">4,7</span>
-                    </div>
-                    <div class="tours__parameter tours__parameter--danger">
-                      <span class="tours__parameter-label">Опасность:</span>
-                      <span class="tours__parameter-value" data-value="2"></span>
-                    </div>
-                    <div class="tours__parameter tours__parameter--price">
-                      <span class="tours__parameter-label">Цена:</span>
-                      <span class="tours__parameter-value" data-value="4"></span>
-                    </div>
-                  </div>
-                  <button class="tours__btn btn btn--primary">
-                    <span>Хочу сюда!</span>
-                  </button>
-                </div>
-              </li>
-
-              <li class="tours__item">
-                <div class="tours__image">
-                  <img src="./assets/img/tours/tour-martin-4.webp" alt="По волнам дотракийского моря." width="400"
-                    height="280">
-                  <span class="tours__category">Экотуризм</span>
-                  <h2 class="tours__tour-title">По волнам дотракийского моря</h2>
-                </div>
-                <div class="tours__info">
-                  <span class="tours__location">Дотракийское море, Эссос</span>
-                  <p class="tours__description">Путешествие по бескрайним степям Дотраки: кочевые стоянки,
-                    конные прогулки, закаты над травяным морем и знакомство с
-                    древними традициями всадников. Возможность попробовать
-                    уникальные шедевры кочевой гастрономии и напитки из
-                    кобыльего молока.</p>
-                  <p class="tours__note">При посещении Ваэс Дотрака провозить спички и зажигалки строго запрещено</p>
-                  <div class="tours__parameters">
-                    <div class="tours__parameter tours__parameter--rating">
-                      <span class="tours__parameter-label">Рейтинг:</span>
-                      <span class="tours__parameter-value">4,8</span>
-                    </div>
-                    <div class="tours__parameter tours__parameter--danger">
-                      <span class="tours__parameter-label">Опасность:</span>
-                      <span class="tours__parameter-value" data-value="2"></span>
-                    </div>
-                    <div class="tours__parameter tours__parameter--price">
-                      <span class="tours__parameter-label">Цена:</span>
-                      <span class="tours__parameter-value" data-value="3"></span>
-                    </div>
-                  </div>
-                  <button class="tours__btn btn btn--primary">
-                    <span>Хочу сюда!</span>
-                  </button>
-                </div>
-              </li>
-
-              <li class="tours__item">
-                <div class="tours__image">
-                  <img src="./assets/img/tours/tour-martin-5.webp" alt="Круиз к руинам Валирии." width="400"
-                    height="280">
-                  <span class="tours__category">Экстрим</span>
-                  <h2 class="tours__tour-title">Круиз к руинам Валирии</h2>
-                </div>
-                <div class="tours__info">
-                  <span class="tours__location">Валирия, Эссос</span>
-                  <p class="tours__description">Экспедиционный круиз к руинам древней Валирии: туманные
-                    проливы, вулканические острова, рассказы о драконьих лордах и
-                    ужин с блюдами валирийской кухни. В программе — фотостоп у
-                    Чёрных стен, лекции о гибели империи и конкурс «Кто первым
-                    заметит подозрительный дым».</p>
-                  <p class="tours__note">Требуется справка от паразитолога и расширенная туристическая страховка.
-                    Выдаётся костюм химзащиты.</p>
-                  <div class="tours__parameters">
-                    <div class="tours__parameter tours__parameter--rating">
-                      <span class="tours__parameter-label">Рейтинг:</span>
-                      <span class="tours__parameter-value">3,8</span>
-                    </div>
-                    <div class="tours__parameter tours__parameter--danger">
-                      <span class="tours__parameter-label">Опасность:</span>
-                      <span class="tours__parameter-value" data-value="5"></span>
-                    </div>
-                    <div class="tours__parameter tours__parameter--price">
-                      <span class="tours__parameter-label">Цена:</span>
-                      <span class="tours__parameter-value" data-value="5"></span>
-                    </div>
-                  </div>
-                  <button class="tours__btn btn btn--primary">
-                    <span>Хочу сюда!</span>
-                  </button>
-                </div>
-              </li>
-
-              <li class="tours__item">
-                <div class="tours__image">
-                  <img src="./assets/img/tours/tour-martin-6.webp" alt="Семь столиц Вестероса." width="400"
-                    height="280">
-                  <span class="tours__category">Экскурсии, можно с детьми</span>
-                  <h2 class="tours__tour-title">Семь столиц Вестероса</h2>
-                </div>
-                <div class="tours__info">
-                  <span class="tours__location">Винтерфелл, Орлиное Гнездо, Риверран, Утёс Кастерли, Хайгарден,
-                    Штормовой Предел, Солнечное Копьё, Пайк</span>
-                  <p class="tours__description">Самый масштабный и длительный тур по Семи королевствам: от промозглого
-                    Винтерфелла до знойного Дорна. Вас ждут интриги, пиры и незабываемые виды. Познакомьтесь с местными
-                    традициями и разнообразной региональной кухней.</p>
-                  <p class="tours__note">В программу входит посещение уникального музея свадебной культуры в замке
-                    Близнецы (Речные земли).</p>
-                  <div class="tours__parameters">
-                    <div class="tours__parameter tours__parameter--rating">
-                      <span class="tours__parameter-label">Рейтинг:</span>
-                      <span class="tours__parameter-value">4,7</span>
-                    </div>
-                    <div class="tours__parameter tours__parameter--danger">
-                      <span class="tours__parameter-label">Опасность:</span>
-                      <span class="tours__parameter-value" data-value="2"></span>
-                    </div>
-                    <div class="tours__parameter tours__parameter--price">
-                      <span class="tours__parameter-label">Цена:</span>
-                      <span class="tours__parameter-value" data-value="5"></span>
-                    </div>
-                  </div>
-                  <button class="tours__btn btn btn--primary">
-                    <span>Хочу сюда!</span>
-                  </button>
-                </div>
-              </li>
-
-              <li class="tours__item">
-                <div class="tours__image">
-                  <img src="./assets/img/tours/tour-martin-7.webp" alt="Мужской ретрит в Чёрном замке Ночного дозора."
-                    width="400" height="280">
-                  <span class="tours__category">Оздоровление</span>
-                  <h2 class="tours__tour-title">Мужской ретрит в Чёрном замке Ночного дозора</h2>
-                </div>
-                <div class="tours__info">
-                  <span class="tours__location">Чёрный замок, Ночной дозор</span>
-                  <p class="tours__description">Суровый отдых для истинных мужицких мужиков, для тех, кто
-                    устал от офиса, планерок и рабочих чатов, для тех, кто хочет настоящих испытаний: ледяной ветер,
-                    горячая каша, братство, баня со снежными обтираниями и никаких разговоров о чувствах.
-                  </p>
-                  <p class="tours__note">Брелок из драконьего стекла в подарок при раннем бронировании</p>
-                  <div class="tours__parameters">
-                    <div class="tours__parameter tours__parameter--rating">
-                      <span class="tours__parameter-label">Рейтинг:</span>
-                      <span class="tours__parameter-value">4,6</span>
-                    </div>
-                    <div class="tours__parameter tours__parameter--danger">
-                      <span class="tours__parameter-label">Опасность:</span>
-                      <span class="tours__parameter-value" data-value="3"></span>
-                    </div>
-                    <div class="tours__parameter tours__parameter--price">
-                      <span class="tours__parameter-label">Цена:</span>
-                      <span class="tours__parameter-value" data-value="5"></span>
-                    </div>
-                  </div>
-                  <button class="tours__btn btn btn--primary">
-                    <span>Хочу сюда!</span>
-                  </button>
-                </div>
-              </li>
-
-              <li class="tours__item">
-                <div class="tours__image">
-                  <img src="./assets/img/tours/tour-martin-8.webp" alt="Огненный фестиваль в Королевской гавани."
-                    width="400" height="280">
-                  <span class="tours__category">События</span>
-                  <h2 class="tours__tour-title">Огненный фестиваль в Королевской гавани</h2>
-                </div>
-                <div class="tours__info">
-                  <span class="tours__location">Королевская Гавань</span>
-                  <p class="tours__description">Роскошный вечер в столице Семи королевств: вас ждут
-                    зрелищное файер-шоу с участием драконов, огненные танцы и
-                    фейерверк над Красным замком.</p>
-                  <p class="tours__note">Мазь от ожогов спрашивайте у своего гида</p>
-                  <div class="tours__parameters">
-                    <div class="tours__parameter tours__parameter--rating">
-                      <span class="tours__parameter-label">Рейтинг:</span>
-                      <span class="tours__parameter-value">4,7</span>
-                    </div>
-                    <div class="tours__parameter tours__parameter--danger">
-                      <span class="tours__parameter-label">Опасность:</span>
-                      <span class="tours__parameter-value" data-value="3"></span>
-                    </div>
-                    <div class="tours__parameter tours__parameter--price">
-                      <span class="tours__parameter-label">Цена:</span>
-                      <span class="tours__parameter-value" data-value="3"></span>
-                    </div>
-                  </div>
-                  <button class="tours__btn btn btn--primary">
-                    <span>Хочу сюда!</span>
-                  </button>
-                </div>
-              </li>
-            </ul>
-
-            <!-- <ul class="tours__list" data-id="rowling"></ul>
-            <ul class="tours__list" data-id="tolkien"></ul>
-            <ul class="tours__list" data-id="starwars"></ul>
-            <ul class="tours__list" data-id="witcher"></ul>
-            <ul class="tours__list" data-id="exo"></ul>
-            <ul class="tours__list" data-id="lovecraft"></ul>
-            <ul class="tours__list" data-id="dune"></ul>
-            <ul class="tours__list" data-id="pratchett"></ul> -->
+            <ul class="tours__list list-reset"></ul>
             <button class="tours__more-btn btn tours__tabs-btn">
               <span>Показать ещё</span>
             </button>
@@ -453,7 +177,7 @@
         <div class="footer__wrapper">
           <a href="#" class="footer__logo logo">
             <span class="logo__img">
-              <img src="./assets/img/logo.png" width="50" height="50" alt="Логотип Interworld Travel.">
+              <img src="./assets/img/logo.svg" width="50" height="50" alt="Логотип Interworld Travel.">
             </span>
             <span class="logo__text">
               <img src="./assets/img/logo-text.svg" width="86" height="55" alt="Interworld Travel.">
@@ -477,6 +201,81 @@
         </div>
       </div>
     </footer>
+
+  </div>
+
+  <div class="modal">
+    <div class="modal__content">
+      <button class="modal__close-btn"></button>
+      <div class="modal__top">
+        <div class="modal__sidebar">
+          <div class="modal__image">
+            <img src="" alt="" width="600" height="400">
+          </div>
+          <div class="modal__params">
+            <div class="tours__parameter">
+              <span class="tours__parameter-label">Рейтинг:</span>
+              <p class="modal__rating tours__parameter-value">4.7</p>
+            </div>
+            <div class="tours__parameter">
+              <span class="tours__parameter-label">Опасность:</span>
+              <p class="modal__danger tours__parameter-value" data-value="3"></p>
+            </div>
+            <div class="tours__parameter">
+              <span class="tours__parameter-label">Цена:</span>
+              <p class="modal__price tours__parameter-value"></p>
+            </div>
+          </div>
+        </div>
+        <div class="modal__info">
+          <p class="modal__name"></p>
+          <p class="modal__location"></p>
+          <p class="modal__description"></p>
+          <div class="modal__note-wrapper"></div>
+        </div>
+      </div>
+      <div class="modal__divider"></div>
+      <div class="modal__bottom">
+        <div class="modal__options">
+          <div class="modal__controls">
+            <span class="modal__legend">Укажите кол-во путевок</span>
+            <div class="modal__quantity">
+              <button class="minus">-</button>
+              <label>
+                <input id="quantity" type="number" max="10" value="1">
+              </label>
+              <button class="plus">+</button>
+            </div>
+          </div>
+          <div class="modal__controls">
+            <span class="modal__legend">Добавьте страховку:</span>
+            <fieldset>
+              <label>
+                <span>Не нужна</span>
+                <input type="radio" name="insurance" value="0" checked>
+              </label>
+              <label>
+                <span>Стандарт</span>
+                <input type="radio" name="insurance" value="500">
+              </label>
+              <label>
+                <span>Расширенная</span>
+                <input type="radio" name="insurance" value="1000">
+              </label>
+            </fieldset>
+          </div>
+        </div>
+        <div class="modal__output">
+          <div>
+            Стоимость:
+            <p class="modal__summary"></p>
+          </div>
+          <button class="modal__order-btn btn btn--primary">
+            <span>Отправить заявку</span>
+          </button>
+        </div>
+      </div>
+    </div>
 
   </div>
 

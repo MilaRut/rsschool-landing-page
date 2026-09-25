@@ -16,32 +16,34 @@
 </head>
 
 <body>
+  <script type="text/javascript">
+    const body = document.querySelector('body');
+    if (localStorage.getItem('data-theme') === 'light') {
+      body.classList.add('light');
+    }
+  </script>
   <div class="wrapper">
     <header class="header header--transparent">
       <div class="container">
         <div class="header__content">
           <a href="#" class="header__logo logo">
             <span class="logo__img">
-              <img src="./assets/img/logo.png" width="50" height="50" alt="Логотип Interworld Travel.">
+              <img src="./assets/img/logo.svg" width="50" height="50" alt="Логотип Interworld Travel.">
             </span>
             <span class="logo__text">
               <img src="./assets/img/logo-text.svg" width="86" height="55" alt="Interworld Travel.">
             </span>
           </a>
-          <button class="header__theme-switcher" aria-label="Переключить тему">
-            <img class="light" src="./assets/img/lamp-light.png" width="100" height="133" alt="" aria-hidden="true">
-            <img class="dark" src="./assets/img/lamp-dark.png" width="100" height="133" alt="" aria-hidden="true"
-              style="display: none;">
-            <img class="hanger light" src="./assets/img/hanger-light.png" alt="" aria-hidden="true">
-            <img class="hanger dark" src="./assets/img/hanger-dark.png" alt="" aria-hidden="true"
-              style="display: none;">
+          <button class="header__theme-switcher" aria-label="Переключить тему" title="Переключить тему">
+            <img class="lamp" src="./assets/img/lamp-dark.png" width="100" height="133" alt="" aria-hidden="true">
+            <img class="hanger" src="./assets/img/hanger-dark.png" alt="" aria-hidden="true">
             <span class="header__theme-switcher-bg"></span>
           </button>
           <button class="header__menu-toggle js-dropdown-trigger" data-id="#nav" aria-label="Открыть меню">
             <span></span>
           </button>
-          <nav class="header__nav nav" id="nav">
-            <ul class="nav__list list-reset preload">
+          <nav class="header__nav nav">
+            <ul class="nav__list list-reset preload" id="nav">
               <li class="nav__item">
                 <a class="nav__link nav__link--anchor" href="#about">О нас</a>
               </li>
@@ -173,10 +175,6 @@
               </div>
             </li>
           </ul>
-          <div class="popular__pagination pagination">
-            <button class="pagination__btn pagination__btn--prev" title="Назад" aria-label="Листать назад"></button>
-            <button class="pagination__btn pagination__btn--next" title="Вперёд" aria-label="Листать вперед"></button>
-          </div>
         </div>
       </section>
       <section class="advantages">
@@ -222,9 +220,26 @@
       <section class="reviews" id="reviews">
         <div class="container">
           <h2 class="reviews__title title">Отзывы</h2>
-          <div class="reviews__wrapper">
+          <div class="reviews__wrapper slider">
             <ul class="reviews__list list-reset">
-              <li class="reviews__item">
+              <li class="reviews__item slide is-visible">
+                <div class="reviews__item-header">
+                  <div class="reviews__item-avatar">
+                    <img src="./assets/img/reviews-7.jpg" width="50" height="50" alt="Аватар автора отзыва.">
+                  </div>
+                  <div class="reviews__item-info">
+                    <p class="reviews__item-author">xrabraya</p>
+                    <p class="reviews__item-location">Данвич: экотур</p>
+                  </div>
+                </div>
+                <p class="reviews__item-text">В целом тур в Данвич понравился, хотя ожидала от сельской местности
+                  немного больше развлечений — после восьми вечера здесь буквально нечем заняться. Особенно расстроило,
+                  что экскурсию на Сентинел-Хилл отменили из-за «неблагоприятных условий», хотя погода была отличная. В
+                  следующий раз, пожалуй, поеду летом — надеюсь, хотя бы козы будут менее агрессивными.
+                </p>
+                <div class="reviews__item-rating"></div>
+              </li>
+              <li class="reviews__item slide">
                 <div class="reviews__item-header">
                   <div class="reviews__item-avatar">
                     <img src="./assets/img/reviews-1.png" width="50" height="50" alt="Аватар автора отзыва.">
@@ -236,12 +251,13 @@
                 </div>
                 <p class="reviews__item-text">Совершали восхождение на Кулак Первых людей в рамках корпоративного
                   тимбилдинга. Это однозначно не для слабых духом: совершенно никакой инфраструктуры, туалетов нет,
-                  замёрзли, некоторые простыли. Мы в полном восторге, спасибо организаторам! Гендир уже забронировал нам
+                  замёрзли, некоторые простыли. Мы в полном восторге, спасибо организаторам! Гендир уже забронировал
+                  нам
                   на следующий год спелеологическую экспедицию в Морию!
                 </p>
                 <div class="reviews__item-rating"></div>
               </li>
-              <li class="reviews__item" style="display: none;">
+              <li class="reviews__item slide">
                 <div class="reviews__item-header">
                   <div class="reviews__item-avatar">
                     <img src="./assets/img/reviews-2.png" width="50" height="50" alt="Аватар автора отзыва.">
@@ -256,7 +272,26 @@
                   оперативное обслуживание</p>
                 <div class="reviews__item-rating"></div>
               </li>
-              <li class="reviews__item" style="display: none;">
+              <!-- <li class="reviews__item slide">
+                <div class="reviews__item-header">
+                  <div class="reviews__item-avatar">
+                    <img src="./assets/img/reviews-4.jpg" width="50" height="50" alt="Аватар автора отзыва.">
+                  </div>
+                  <div class="reviews__item-info">
+                    <p class="reviews__item-author">sevenkingdoms_traveler</p>
+                    <p class="reviews__item-location">Семь столиц Вестероса</p>
+                  </div>
+                </div>
+                <p class="reviews__item-text">Тот случай, когда после возвращения домой ещё несколько дней по привычке
+                  хотелось спрашивать, где мой плащ, лошадь и почему вокруг нет ни одного человека, который обращается
+                  ко мне «милорд».
+                  Маршрут большой и насыщенный, отличное сочетание локаций, истории и гастрономии.
+                  Вернулись домой уставшие, с миллионом фотографий и сувениров.
+                  Вестерос-прекрасное место для путешествия, если ты знаешь, что в любой момент можешь вернуться домой и
+                  не претендуешь на Железный трон 🧺</p>
+                <div class="reviews__item-rating"></div>
+              </li> -->
+              <li class="reviews__item slide">
                 <div class="reviews__item-header">
                   <div class="reviews__item-avatar">
                     <img src="./assets/img/reviews-3.png" width="50" height="50" alt="Аватар автора отзыва.">
@@ -271,7 +306,7 @@
                   собой перекус, на фудкорте огромные очереди</p>
                 <div class="reviews__item-rating"></div>
               </li>
-              <li class="reviews__item" style="display: none;">
+              <li class="reviews__item slide">
                 <div class="reviews__item-header">
                   <div class="reviews__item-avatar">
                     <img src="./assets/img/reviews-2.png" width="50" height="50" alt="Аватар автора отзыва.">
@@ -286,7 +321,7 @@
                   на ужине еда появляется из воздуха, но кофе почему-то нет</p>
                 <div class="reviews__item-rating"></div>
               </li>
-              <li class="reviews__item" style="display: none;">
+              <li class="reviews__item slide">
                 <div class="reviews__item-header">
                   <div class="reviews__item-avatar">
                     <img src="./assets/img/reviews-1.png" width="50" height="50" alt="Аватар автора отзыва.">
@@ -470,7 +505,7 @@
         <div class="footer__wrapper">
           <a href="#" class="footer__logo logo">
             <span class="logo__img">
-              <img src="./assets/img/logo.png" width="50" height="50" alt="Логотип Interworld Travel">
+              <img src="./assets/img/logo.svg" width="50" height="50" alt="Логотип Interworld Travel">
             </span>
             <span class="logo__text">
               <img src="./assets/img/logo-text.svg" width="86" height="55" alt="Interworld Travel.">
