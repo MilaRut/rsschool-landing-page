@@ -8,7 +8,7 @@ const modal = document.querySelector('.modal');
 const skeleton = document.querySelector('#skeleton');
 
 async function getData() {
-  const response = await fetch('../../../assets/data/tours.json');
+  const response = await fetch('../assets/data/tours.json');
   if (!response.ok) {
     throw new Error(`Ошибка загрузки: ${response.status}`);
   }
