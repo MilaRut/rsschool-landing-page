@@ -85,7 +85,7 @@ function renderModal(el, ind) {
     const modalNote = createElement('p', ['modal__note'], {}, el.note);
     modalNoteWrapper.appendChild(modalNote);
   }
-  modalImage.src = `./assets/img/tours/tour-${el.category}-${ind}.webp`;
+  modalImage.src = `./assets/img/tours/${el.category}-${ind}.webp`;
   modalImage.alt = el.name;
   modalRating.textContent = el.rating;
   modalDanger.dataset.value = el.danger;

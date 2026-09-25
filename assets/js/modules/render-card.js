@@ -48,7 +48,7 @@ function renderCards(tour) {
         const li = createElement('li', ['tours__item']);
         const toursImage = createElement('div', ['tours__image']);
         toursImage.innerHTML = `
-          <img src="./assets/img/tours/tour-${el.category}-${ind}.webp" alt="${el.name}." width="400" height="280">
+          <img src="./assets/img/tours/${el.category}-${ind}.webp" alt="${el.name}." width="400" height="280">
           <span class="tours__tags">${el.tags}</span>
           <h2 class="tours__name" data-popular="${el.popular}">${el.name}</h2>
         `;
