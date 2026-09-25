@@ -7,13 +7,13 @@ function showSuccess() {
     return;
   }
 
-  successBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
+  document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('success-btn')) {
       orderModal.classList.remove('is-active');
       successModal.classList.add('is-active');
-    });
-  });
-
+      document.body.classList.add('no-scroll');
+    }
+  }); 
 
   document.addEventListener('click', (e) => {
     if (e.target === successModal || e.target.classList.contains('modal__close-btn')) {
