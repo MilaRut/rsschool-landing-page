@@ -9,6 +9,7 @@ import { handleControls } from "./modules/modal.js";
 import { showSuccess } from "./modules/success.js";
 import { setSelectedCat } from "./modules/popular.js";
 import { slidesPlugin } from "./modules/gallery.js";
+const modals = document.querySelectorAll('.modal');
 
 window.addEventListener('DOMContentLoaded', () => {
   loadCurrentTheme();
@@ -26,4 +27,10 @@ window.addEventListener('DOMContentLoaded', () => {
   showSuccess();
   setSelectedCat();
   slidesPlugin();
+  
+  window.addEventListener('load', () => {
+    modals.forEach((el) => {
+      el.classList.remove('modal--preload');
+    });
+  });
 });
