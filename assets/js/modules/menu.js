@@ -1,18 +1,21 @@
 const triggers = document.querySelectorAll('.js-dropdown-trigger');
+const nav = document.querySelector('.nav');
 const navItems = document.querySelectorAll('.nav__item');
-// const body = document.querySelector('body');
+const navBtn = document.querySelector('.header__menu-toggle');
+const body = document.querySelector('body');
+const mediaQuery = window.matchMedia('(min-width: 769px)');
 
 function openMenu(content, trigger) {
   content.classList.add('is-active');
   content.classList.remove('preload');
   trigger.classList.add('is-active');
-  // body.classList.add('no-scroll');
+  body.classList.add('no-scroll');
 }
 
 function closeMenu(content, trigger) {
   content.classList.remove('is-active');
   trigger.classList.remove('is-active');
-  // body.classList.remove('no-scroll');
+  body.classList.remove('no-scroll');
   setTimeout(() => {
     content.classList.add('preload');
   }, 500);
@@ -50,4 +53,10 @@ function toggleMenu() {
   });
 }
 
-export {toggleMenu};
+function handleMediaChange(e) {
+  if (e.matches) {
+    closeMenu(nav, navBtn);
+  }
+}
+
+export { toggleMenu, mediaQuery, handleMediaChange };
