@@ -75,8 +75,8 @@ button {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
   scrollbar-gutter: stable;
+  scroll-padding-top: 95px;
 }
 
 html,
@@ -84,8 +84,6 @@ body {
   font-family: var(--font-main);
   font-size: var(--font-size-base);
   min-height: 100vh;
-  scroll-behavior: smooth;
-  scroll-padding-top: 97px;
 }
 
 body {
