@@ -1,6 +1,6 @@
 import { createElement } from './create-element.js';
 
-const modal = document.querySelector('.modal');
+const modal = document.querySelector('#order-modal');
 const modalImage = document.querySelector('.modal__image img');
 const modalName = document.querySelector('.modal__name');
 const modalLocation = document.querySelector('.modal__location');
@@ -82,7 +82,6 @@ function renderModal(el, ind) {
   modalDescr.textContent = el.description;
   modal.querySelector('.modal__note')?.remove();
   if (el.note !== '') {
-    console.log(el.note);
     const modalNote = createElement('p', ['modal__note'], {}, el.note);
     modalNoteWrapper.appendChild(modalNote);
   }
