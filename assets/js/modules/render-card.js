@@ -88,9 +88,10 @@ function renderCards(tour) {
         updateHiddenCards();
         hideSkeleton();
 
-        toursBtn.addEventListener('click', () => {
+        li.addEventListener('click', () => {
           modal.classList.add('is-active');
           renderModal(el, ind);
+          document.body.classList.add('no-scroll');
         });
       })
 

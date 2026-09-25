@@ -152,13 +152,15 @@ function handleControls() {
     if (e.target === modal || e.target.classList.contains('modal__close-btn')) {
       modal.classList.remove('is-active');
       clearModal();
+      document.body.classList.remove('no-scroll');
     }
   });
-
+  
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       modal.classList.remove('is-active');
       clearModal();
+      document.body.classList.remove('no-scroll');
     }
   });
 }

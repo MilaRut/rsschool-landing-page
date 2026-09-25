@@ -18,12 +18,14 @@ function showSuccess() {
   document.addEventListener('click', (e) => {
     if (e.target === successModal || e.target.classList.contains('modal__close-btn')) {
       successModal.classList.remove('is-active');
+      document.body.classList.remove('no-scroll');
     }
   });
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       successModal.classList.remove('is-active');
+      document.body.classList.remove('no-scroll');
     }
   });
 }
