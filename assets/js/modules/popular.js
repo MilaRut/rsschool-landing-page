@@ -8,7 +8,7 @@ function setSelectedCat() {
   popularBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       localStorage.setItem('selected-cat', btn.dataset.cat);
-      window.location = '/tours.html'
+      window.location = './tours.html'
     });
   });
 }
