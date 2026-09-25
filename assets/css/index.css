@@ -1359,13 +1359,12 @@ body.light .footer__rsschool {
 }
 
 .gal-slide .popular__info {
-  transition: all 0.3s ease-in 0.4s;
   transform: translateY(150%);
-  transform-origin: bottom center;
 }
 
 .gal-slide.is-active .popular__info {
   transform: translateY(0);
+  transition: transform 0.3s ease-in 0.4s;
 }
 
 @media (max-width: 768px) {

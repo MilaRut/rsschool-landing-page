@@ -441,6 +441,7 @@ section.tours {
 .tours__tabs-btn.is-active {
   background-color: var(--accent);
   color: var(--bg-main);
+  pointer-events: none;
 }
 
 .tours__list {
@@ -1413,24 +1414,6 @@ body.light #success-modal a {
     grid-template-rows: auto auto;
   }
     
-  .tours__item::after {
-    position: absolute;
-    content: "i";
-    top: 16px;
-    right: 16px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: var(--accent);
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    color: #000000;
-    font-weight: 600;
-  }
-
   .tours__image {
     min-height: 250px;
   }
