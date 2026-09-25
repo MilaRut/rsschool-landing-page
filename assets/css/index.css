@@ -1407,6 +1407,12 @@ body.light .modal__close-btn::after {
   
   .hero__subtitle {
     font-size: 16px;
+    padding: 0 43px;
+  }
+
+  .hero__subtitle::before, 
+  .hero__subtitle::after {
+    width: 37px;
   }
 
   .hero__title {

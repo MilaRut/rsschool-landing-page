@@ -817,6 +817,8 @@ section.tours {
   flex-direction: column;
   width: 100%;
   max-width: 900px;
+  width: 90vw;
+  max-width: 1200px;
   max-height: 100vh;
   gap: var(--spacing-lg);
   background-color: var(--bg-secondary);
@@ -890,8 +892,10 @@ section.tours {
 
 .modal__params {
   display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  padding: 0 20px;
 }
 
 .modal__info {
@@ -1051,6 +1055,7 @@ input[type="radio"] {
 }
 
 #success-modal .modal__content {
+  max-width: 900px;
   text-align: center;
   align-items: center;
 }
@@ -1325,6 +1330,12 @@ body.light #success-modal a {
   .tours__parameter {
     flex-direction: row;
   }
+
+  .modal__params {
+    flex-direction: column;    
+    gap: var(--spacing-sm);
+    padding: 0;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1334,6 +1345,14 @@ body.light #success-modal a {
 
   body::-webkit-scrollbar {
     display: none;
+  }
+  
+  ::-webkit-scrollbar-track {
+    display: none;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    display: none;    
   }
 
   .container {
@@ -1512,6 +1531,7 @@ body.light #success-modal a {
   }
 
   .modal__content {
+    width: 100%;
     padding: 50px 20px 30px;
   }
 
