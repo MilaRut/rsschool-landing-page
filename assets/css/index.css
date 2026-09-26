@@ -83,7 +83,7 @@ html,
 body {
   font-family: var(--font-main);
   font-size: var(--font-size-base);
-  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 body {
@@ -104,7 +104,7 @@ body.no-scroll {
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100dvh;
   min-height: calc(100 * var(--vh, 1vh));
 }
 
@@ -385,7 +385,7 @@ summary::marker {
 .hero {
   position: relative;
   padding: 200px 0 50px;
-  height: 100vh;
+  height: 100dvh;
   background: url("../img/hero-bg.webp") no-repeat;
   background-size: cover;
   background-position: top center;
@@ -962,7 +962,7 @@ details[open] .faq__question-icon {
   flex-direction: column;
   width: 100%;
   max-width: 900px;
-  max-height: 100vh;
+  max-height: 100dvh;
   gap: var(--spacing-lg);
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-dark);
@@ -1357,7 +1357,7 @@ body.light .modal__close-btn::after {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     background-color: var(--bg-main);
     padding: 100px 0 30px;
     z-index: 100;
