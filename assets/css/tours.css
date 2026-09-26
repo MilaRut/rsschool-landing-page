@@ -829,6 +829,14 @@ section.tours {
   transform: scale(0);
   transition: transform 0.3s ease-in;
   overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.modal__content::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 .modal.is-active {
