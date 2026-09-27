@@ -1,5 +1,5 @@
 export const mediaQueriesMob = window.matchMedia('(max-width: 768px)');
-const slides = document.querySelectorAll('.gal-slide');
+const slides = document.querySelectorAll('.popular__item');
 
 let currentActiveSlide = 0;
 

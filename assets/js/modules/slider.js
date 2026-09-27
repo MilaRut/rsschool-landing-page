@@ -1,11 +1,11 @@
-const slider = document.querySelector('.slider');
+const slider = document.querySelector('.reviews__wrapper');
 
 function initSlider() {
   if (!slider) {
     return;
   }
 
-  const slides = slider.querySelectorAll('.slide');
+  const slides = slider.querySelectorAll('.reviews__item');
   const prevBtn = slider.querySelector('.pagination__btn--prev');
   const nextBtn = slider.querySelector('.pagination__btn--next');
   const total = slides.length - 1;
