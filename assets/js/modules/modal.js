@@ -11,6 +11,7 @@ const modalDanger = document.querySelector('.modal__danger');
 const modalPrice = document.querySelector('.modal__price');
 const numInput = document.querySelector('#quantity');
 const radioBtns = document.querySelectorAll('input[name="insurance"]');
+const defaultRadio = document.querySelector('input[name="insurance"][value="0"]');
 const modalSummary = document.querySelector('.modal__summary');
 const minusBtn = document.querySelector('.minus');
 const plusBtn = document.querySelector('.plus');
@@ -51,10 +52,7 @@ function clearModal() {
       img.alt = '';
     }
 
-    const defaultRadio = modal.querySelector('[value="0"]');
-    if (defaultRadio) {
-      defaultRadio.checked = true;
-    }
+    defaultRadio.checked = true;
 
     modal.querySelector('.modal__note')?.remove();
 
@@ -95,15 +93,8 @@ function renderModal(el, ind) {
   modalRating.textContent = el.rating;
   modalDanger.dataset.value = el.danger;
   modalPrice.textContent = `${currentPrice} ❤`;
-
-  if (numInput) {
-    numInput.value = '1';
-  }
-
-  const defaultRadio = modal.querySelector('[value="0"]');
-  if (defaultRadio) {
-    defaultRadio.checked = true;
-  }
+  numInput.value = '1';
+  defaultRadio.checked = true;
 
   updateSummary();
 }
@@ -120,10 +111,9 @@ function handleControls() {
     });
   })
 
-  numInput?.addEventListener('input', (e) => {
+  numInput.addEventListener('input', (e) => {
     let value = Number(e.target.value);
-
-    if (Number.isNaN(value) || value < MIN_QTY) {
+    if (value < MIN_QTY) {
       value = '';
       e.target.value = String(value);
     } else if (value > MAX_QTY) {
@@ -135,6 +125,17 @@ function handleControls() {
     updateSummary();
   });
 
+  numInput.addEventListener('blur', (e) => {
+    if (e.target.value === '') {
+      e.target.value = String(MIN_QTY);
+      quant = MIN_QTY;
+      updateSummary();
+    }
+  });
+
+  minusBtn.addEventListener('mousedown', (e) => e.preventDefault());
+  plusBtn.addEventListener('mousedown', (e) => e.preventDefault());
+
   minusBtn.addEventListener('click', () => {
     const value = Number(numInput.value);
     if (value > MIN_QTY) {
@@ -144,7 +145,7 @@ function handleControls() {
     }
   });
 
-  plusBtn?.addEventListener('click', () => {
+  plusBtn.addEventListener('click', () => {
     const value = Number(numInput.value);
     if (value < MAX_QTY) {
       numInput.value = String(value + 1);
