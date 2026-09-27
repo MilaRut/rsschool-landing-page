@@ -1189,7 +1189,6 @@ body.light .modal__close-btn::after {
 
   .popular__item {
     height: 425px;
-    border: 1px solid var(--border-dark);
   }
 }
 
@@ -1381,6 +1380,7 @@ body.light .modal__close-btn::after {
   .popular__item.is-active,
   .popular__item {
     flex: auto;
+    border: 1px solid var(--border-dark);
   }
 
   .popular__item.is-active .popular__image,
