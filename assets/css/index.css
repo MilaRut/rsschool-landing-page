@@ -571,6 +571,7 @@ summary::marker {
   display: flex;
   justify-content: center;
   gap: 16px;
+  margin-top: 30px;
   margin-bottom: 16px;
 }
 
@@ -637,22 +638,21 @@ section.advantages {
 }
 
 .reviews__wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
+  overflow: hidden;
+  max-width: 600px;
+  height: 300px;
+  margin: 0 auto;
 }
 
 .reviews__list {
-  position: relative;
-  width: fit-content;
   display: flex;
-  overflow-x: hidden;
+  transition: transform var(--transition);
+  height: 100%;
 }
 
 .reviews__item {
-  max-width: 600px;
-  min-height: 300px;
+  min-width: 100%;
+  height: 100%;
   background-color: var(--bg-secondary);
   border-radius: var(--spacing-md);
   border: 1px solid var(--border-dark);
@@ -660,16 +660,6 @@ section.advantages {
   display: flex;
   flex-direction: column;
   gap: 20px;
-
-  opacity: 0;
-  position: absolute;
-  transition: opacity 0.5s ease; 
-  pointer-events: none;
-}
-
-.reviews__item.is-visible {
-  opacity: 1;
-  position: relative;
 }
 
 .reviews__item-header {
@@ -1402,8 +1392,8 @@ body.light .modal__close-btn::after {
     padding: 16px;
   }
 
-  .reviews__item {
-    min-height: 470px;
+  .reviews__wrapper {
+    height: 470px;
   }
 
   .reviews__item-author {
