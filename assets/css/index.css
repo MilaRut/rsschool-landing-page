@@ -289,11 +289,6 @@ summary::marker {
   transform: scale(0.5) translate(67px, -90px);
 }
 
-.header__theme-switcher:focus,
-.header__theme-switcher:focus-visible {
-  outline: none;
-}
-
 .header__theme-switcher img {
   filter: invert(0.7);
 }
