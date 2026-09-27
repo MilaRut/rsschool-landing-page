@@ -1,5 +1,4 @@
 import { renderCards } from "./render-card.js";
-const toursList = document.querySelector('#tours-list');
 const tabsBtns = document.querySelectorAll('.tours__tabs-btn');
 const showMoreBtn = document.querySelector('.tours__more-btn');
 const skeleton = document.querySelector('#skeleton');
@@ -11,7 +10,6 @@ function handleTabs() {
       if (skeleton.classList.contains('is-hidden')) {
         skeleton.classList.remove('is-hidden')
       }
-      toursList.innerHTML = '';
       if (showMoreBtn.classList.contains('is-hidden')) {
         showMoreBtn.classList.remove('is-hidden')
       }

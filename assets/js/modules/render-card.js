@@ -8,24 +8,39 @@ const showMoreBtn = document.querySelector('.tours__more-btn');
 const modal = document.querySelector('.modal');
 const skeleton = document.querySelector('#skeleton');
 
-async function getData() {
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error(`Ошибка загрузки: ${response.status}`);
-  }
-  return response.json();
+let dataPromise = null;
+let currentTab = null;
+let listenerAttached = false;
+
+function getData() {
+  dataPromise ??= fetch(url)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Ошибка загрузки: ${response.status}`);
+      }
+      return response.json();
+    })
+    .catch((error) => {
+      dataPromise = null;
+      throw error;
+    });
+  return dataPromise;
 }
 
 function updateHiddenCards() {
+  if (!toursList) {
+    return;
+  }
+
   const items = toursList.querySelectorAll('.tours__item');
   const limit = mediaQueriesMob.matches ? 4 : 8;
-  const isExpanded = showMoreBtn?.classList.contains('is-hidden') ?? false;
+  const isExpanded = showMoreBtn.classList.contains('is-hidden') ?? false;
 
-  items.forEach((li, ind) => {
+  items.forEach((el, ind) => {
     if (!isExpanded && ind >= limit) {
-      li.classList.add('is-hidden');
+      el.classList.add('is-hidden');
     } else {
-      li.classList.remove('is-hidden');
+      el.classList.remove('is-hidden');
     }
   });
 }
@@ -41,8 +56,13 @@ function renderCards(tour) {
     return;
   }
 
+  currentTab = tour;
+
   getData()
     .then((data) => {
+      if (tour !== currentTab) return;
+      toursList.innerHTML = '';
+
       const currentCategory = data.filter((el) => el.category === tour);
       currentCategory.forEach((el, ind) => {
         const li = createElement('li', ['tours__item']);
@@ -85,17 +105,15 @@ function renderCards(tour) {
         li.appendChild(toursInfo);
         toursList.appendChild(li);
 
-        updateHiddenCards();
-        hideSkeleton();
-
         li.addEventListener('click', () => {
           modal.classList.add('is-active');
           renderModal(el, ind);
           document.body.classList.add('no-scroll');
         });
-      })
+      });
 
-      mediaQueriesMob.addEventListener('change', updateHiddenCards);
+      updateHiddenCards();
+      hideSkeleton();
     })
     .catch((error) => {
       console.error(error);
@@ -103,4 +121,12 @@ function renderCards(tour) {
     });
 }
 
-export { renderCards };
+function initListener() {
+  if (listenerAttached) {
+    return;
+  }
+  mediaQueriesMob.addEventListener('change', updateHiddenCards);
+  listenerAttached = true;
+}
+
+export { renderCards, initListener };

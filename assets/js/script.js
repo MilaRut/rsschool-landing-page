@@ -10,6 +10,7 @@ import { showSuccess } from "./modules/success.js";
 import { setSelectedCat } from "./modules/popular.js";
 import { slidesPlugin } from "./modules/gallery.js";
 import { openReviewsModal } from "./modules/reviews.js";
+import { initListener } from "./modules/render-card.js";
 const modals = document.querySelectorAll('.modal');
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -29,6 +30,7 @@ window.addEventListener('DOMContentLoaded', () => {
   setSelectedCat();
   slidesPlugin();
   openReviewsModal();
+  initListener();
   
   window.addEventListener('load', () => {
     modals.forEach((el) => {

@@ -491,7 +491,7 @@ summary::marker {
   border-radius: 4px;
   overflow: hidden;
   cursor: pointer;
-  transition: all 500ms ease-in-out;
+  transition: all 0.5s ease-in-out, transform var(--transition);
 }
 
 .popular__item.is-active {
@@ -1533,7 +1533,7 @@ body.light .modal__close-btn::after {
   }
 
   .popular__item:not(.is-active):hover {
-    box-shadow: 0 0 5px 5px rgba(119, 119, 119, 0.3);
+    transform: translateY(-3px);
   }  
 
   .advantages__item:hover {

@@ -73,6 +73,11 @@ function renderModal(el, ind) {
     return;
   }
 
+  if (clearTimeoutId) {
+    clearTimeout(clearTimeoutId);
+    clearTimeoutId = null;
+  }
+
   currentPrice = Number(el.price) * 1000;
   insur = 0;
   quant = 1;
@@ -155,7 +160,7 @@ function handleControls() {
       document.body.classList.remove('no-scroll');
     }
   });
-  
+
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       modal.classList.remove('is-active');
@@ -165,4 +170,4 @@ function handleControls() {
   });
 }
 
-export {renderModal, handleControls};
+export { renderModal, handleControls };

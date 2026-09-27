@@ -81,6 +81,10 @@ function openReviewsModal() {
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
+      if (!modal.classList.contains('is-active')) {
+        return;
+      }
+      
       modal.classList.remove('is-active');
       clearModal();
       document.body.classList.remove('no-scroll');
