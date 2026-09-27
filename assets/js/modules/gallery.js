@@ -31,10 +31,6 @@ function slidesPlugin(activeSlide = 0) {
     return;
   }
 
-  if (mediaQueriesMob.matches) {
-    return;
-  }
-
   const handle = (e) => {
     if (e.matches) {
       disableSlider();
