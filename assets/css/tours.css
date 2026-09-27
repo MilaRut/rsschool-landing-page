@@ -222,7 +222,8 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .btn span,
 .btn svg {
-  z-index: 10;
+  position: relative;
+  z-index: 100;
   pointer-events: none;
 }
 
@@ -246,6 +247,7 @@ input[type="number"]::-webkit-inner-spin-button {
   height: 100%;
   background-color: var(--accent);
   transition: transform var(--transition);
+  pointer-events: none;
 }
 
 .btn--secondary {
@@ -363,7 +365,7 @@ input[type="number"]::-webkit-inner-spin-button {
   display: flex;
 }
 
-.nav__link.btn {
+.nav__link-btn {
   min-width: 150px;
   margin-left: 60px;
   padding: 10px 10px;
@@ -1210,7 +1212,7 @@ body.light #success-modal a {
     font-size: 14px;
   }
   
-  .nav__link.btn {
+  .nav__link-btn {
     margin: 0;
   }
 
@@ -1337,7 +1339,7 @@ body.light #success-modal a {
     justify-content: center;
   }
 
-  .nav__link.btn {
+  .nav__link-btn {
     margin: 0 auto;
     padding: 16px;
   }

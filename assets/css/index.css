@@ -210,7 +210,8 @@ summary::marker {
 
 .btn span,
 .btn svg {
-  z-index: 10;
+  position: relative;
+  z-index: 100;
   pointer-events: none;
 }
 
@@ -352,7 +353,7 @@ summary::marker {
   display: flex;
 }
 
-.nav__link.btn {
+.nav__link-btn {
   min-width: 150px;
   margin-left: 60px;
   padding: 10px 10px;
@@ -1174,7 +1175,7 @@ body.light .modal__close-btn::after {
     font-size: 14px;
   }
   
-  .nav__link.btn {
+  .nav__link-btn {
     margin: 0;
   }
 
@@ -1296,7 +1297,7 @@ body.light .modal__close-btn::after {
     justify-content: center;
   }
 
-  .nav__link.btn {
+  .nav__link-btn {
     margin: 0 auto;
     padding: 16px;
   }
