@@ -6,7 +6,7 @@ const nextBtn = document.querySelector('.pagination__btn--next');
 let currentInd  = 0;
 
 function updateSliderPosition(arr) {
-  arr.style.transform = `translateX(-${currentInd  * 100}%)`;
+  arr.style.transform = `translateY(-${currentInd  * 100}%)`;
 }
 
 function initSlider() {
