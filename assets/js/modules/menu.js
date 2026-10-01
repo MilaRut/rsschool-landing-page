@@ -1,5 +1,5 @@
 const triggers = document.querySelectorAll('.js-dropdown-trigger');
-const nav = document.querySelector('.nav');
+const nav = document.querySelector('.nav__list');
 const navItems = document.querySelectorAll('.nav__item');
 const navBtn = document.querySelector('.header__menu-toggle');
 const body = document.querySelector('body');
