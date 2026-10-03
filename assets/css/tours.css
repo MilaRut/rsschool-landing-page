@@ -910,6 +910,14 @@ fieldset {
   border-radius: 5px;
   font-size: 20px;
   text-align: center;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+#quantity::-webkit-outer-spin-button,
+#quantity::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .modal__quantity {
