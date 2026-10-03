@@ -243,10 +243,6 @@ summary::marker {
   gap: 5px;
 }
 
-.btn--secondary span {
-  padding-bottom: 2px;
-}
-
 .header {
   position: fixed;
   top: 0;
@@ -473,6 +469,10 @@ summary::marker {
 
 .popular__title {
   margin-bottom: 0;
+}
+
+.popular__link span {
+  padding-bottom: 4px;
 }
 
 .popular__list {
@@ -706,6 +706,7 @@ section.advantages {
 
 .reviews__item-btn {
   display: inline-flex;
+  align-items: center;
 }
 
 .faq__title {
