@@ -652,6 +652,10 @@ section.advantages {
   height: 100%;
 }
 
+.reviews__list.preload {
+  transition: none;
+}
+
 .reviews__item {
   min-width: 100%;
   min-height: 100%;
